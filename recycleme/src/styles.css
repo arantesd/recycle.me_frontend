@@ -1,3 +1,55 @@
 .body{
     font-family: Roboto;
+    
+}
+
+#botaoEntrar{
+    color: #41566B;
+    font-size: 18px;
+}
+
+#botaoCHOME{
+    color: #41566B;
+    background-color: rgba(36, 191, 60, 0.62);
+
+}
+
+#botaoCC{
+    color: rgba(65, 86, 107, 1);
+    background-color: rgba(36, 191, 60, 0.62);
+    
+    
+}
+#homeButton{
+    color: rgba(65, 86, 107, 1);
+}
+
+.left-inner-addon {
+    position: relative;
+}
+.left-inner-addon i {
+    position: absolute;
+    padding: 10px 12px;
+    pointer-events: none;
+    color: #666;
+}
+.left-inner-addon input.form-control {
+    padding-left: 30px;
+}
+nav{
+    font-size: 18px;
+}
+
+#textHeader h1{
+    font-family: 'Roboto', 'sans-serif';
+    font-size: 60px;
+    font-weight: 300;
+}
+#banner{
+    background: url("../../recycleme/src/assets/img/bg_gradient.png");
+}
+#carousel h3{
+    font-family: 'Roboto' ,'Bold';
+    font-weight: 600;
+    font-size: 40px;
 }
