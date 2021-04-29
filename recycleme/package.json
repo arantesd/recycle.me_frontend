@@ -26,8 +26,11 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "bootstrap": "^4.6.0",
     "jquery": "^3.6.0",
+<<<<<<< HEAD
     "ngx-bootstrap": "^6.2.0",
     "ngx-order-pipe": "^2.1.1",
+=======
+>>>>>>> 2df59be43fdabfd5aea4db85a8cda12396b0919b
     "popper.js": "^1.16.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
