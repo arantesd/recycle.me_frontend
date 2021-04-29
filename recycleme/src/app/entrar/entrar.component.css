@@ -1,9 +1,5 @@
-#img-bg{
-    background-image: url('https://i.imgur.com/Qft1Mpd.png');
 
-    min-height: 695px;
 
-    background-position: right 5em bottom 50px;
-    background-repeat: no-repeat;
-    background-size: cover;
+.btn{
+    text-transform: uppercase;
 }
