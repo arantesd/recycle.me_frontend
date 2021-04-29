@@ -1,0 +1,4 @@
+.form-categoria {
+    display: flex;
+    flex-direction: column;
+}
