@@ -1,0 +1,39 @@
+/* coluna imagem */
+img{
+  width: 480px;
+  height: 480px;
+}
+/* form */
+input{
+  border-radius: 10px;
+}
+select{
+  border-radius: 10px;
+}
+
+.cadastrar{
+  background-color:rgba(36, 191, 60, 0.62)
+}
+.cancelar{
+  color:rgba(209, 209, 209, 1);
+  background-color:rgba(65, 86, 107, 1)
+}
+@media only screen and (max-height: 766px) {
+  .titulo{
+    margin-left: 55px;
+  }
+  .col-form input{
+    width: 176px;
+  }
+}
+/*
+  Mudanças para Tela Full Hd
+*/
+@media only screen and (min-height: 900px) {
+  .titulo{
+    margin-left: 110px;
+  }
+  .col-form input{
+    width: 283px;
+  }
+}
