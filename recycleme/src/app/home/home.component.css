@@ -1,0 +1,21 @@
+#banner{
+    background: url("https://i.imgur.com/lCu7Tpy.png");
+}
+
+#textHeader h1{
+    font-family: 'Roboto', 'sans-serif';
+    font-size: 60px;
+    font-weight: 300;
+}
+
+#botaoCHOME{
+    color: #41566B;
+    background-color: rgba(36, 191, 60, 0.62);
+
+}
+
+#carousel h3{
+    font-family: 'Roboto' ,'Bold';
+    font-weight: 600;
+    font-size: 40px;
+}

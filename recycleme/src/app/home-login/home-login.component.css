@@ -1,0 +1,19 @@
+h2 {
+  color: rgba(65, 86, 107, 1);
+}
+.box-produtos {
+  border: solid 1px;
+  height: 688px;
+}
+@media only screen and (max-height: 766px) {
+  .titulo {
+    margin-left: 20px;
+  }
+}
+/* Adaptação para tela Full Hd */
+
+@media only screen and (min-height: 900px) {
+  .titulo {
+    margin-left: 335px;
+  }
+}
