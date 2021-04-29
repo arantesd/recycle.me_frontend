@@ -2,3 +2,23 @@
     font-family: Roboto;
     color: rgba(65, 86, 107, 1);
 }
+
+#botaoEntrar{
+    color: #41566B;
+    font-size: 18px;
+}
+
+
+#botaoCC{
+    color: rgba(65, 86, 107, 1);
+    background-color: rgba(36, 191, 60, 0.62);
+    
+    
+}
+#homeButton{
+    color: rgba(65, 86, 107, 1);
+}
+
+nav{
+    font-size: 18px;
+}
