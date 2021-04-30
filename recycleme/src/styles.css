@@ -1,8 +1,14 @@
 .body{
-    font-family: Roboto;
+    font-family: Roboto; 
+    overflow-x: hidden;
     
 }
+::-webkit-scrollbar {
+    display: none;
+}
 
-
+.padrao-font-color{
+    color: #41566B
+}
 
 
