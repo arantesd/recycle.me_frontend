@@ -20,10 +20,10 @@ select{
 }
 @media only screen and (max-height: 766px) {
   .titulo{
-    margin-left: 55px;
+    margin-left: 70px;
   }
   .col-form input{
-    width: 176px;
+    width: 191px;
   }
 }
 /*
