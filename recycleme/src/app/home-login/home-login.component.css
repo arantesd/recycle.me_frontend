@@ -7,13 +7,13 @@ h2 {
 }
 @media only screen and (max-height: 766px) {
   .titulo {
-    margin-left: 20px;
+    margin-left: 62px;
   }
 }
 /* Adaptação para tela Full Hd */
 
 @media only screen and (min-height: 900px) {
   .titulo {
-    margin-left: 335px;
+    margin-left: 339px;
   }
 }
