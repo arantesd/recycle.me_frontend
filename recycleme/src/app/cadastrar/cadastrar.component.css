@@ -1,21 +1,23 @@
 
-  /* form */
+  /* formulário */
   input{
     border-radius: 10px;
   }
+
   .enviar{
     color:rgba(209, 209, 209, 1);
     background-color:rgba(65, 86, 107, 1)
   }
-  @media only screen and (max-height: 700px) {
+  @media only screen and (max-height: 766px) {
     .col-form input{
       width: 275px;
       
     }
   }
-  /*
-    Mudanças para Tela Full Hd
-  */
+  .btn{
+    text-transform: uppercase;
+}
+  /* Mudanças para Tela Full Hd  */
   @media only screen and (min-height: 900px) {
     .titulo{
       margin-left: 110px;
@@ -25,11 +27,11 @@
     }
   }
 
-  .font1{
-    font-size: 53px;
+  /* font frase */
+  .fontf{
+    font-size: 35pt;
     font-family: nunito;
     color: #41566B;
-    left: 64%;
     
-    
+       
   }

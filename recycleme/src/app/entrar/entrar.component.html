@@ -1,40 +1,50 @@
+<!--imagem background-->
 <div class="container-fluid" id="img-bg">
+    <!--/imagem background-->
 
     <div class="row d-flex align-items-center">
 
         <div class="col-md-6">
 
-            <div class="row d-flex justify-content-center">
+            <div class="row justify-content-center">
                 <div class="col-md-10">
 
-                    <h1 class="text-center mb-3">LOGIN</h1>
+                     <!--titulo-->
+                    <h1 class="text-center mb-3 pt-5 padrao-font-color">LOGIN</h1>
+                     <!--titulo-->
 
-                    <div class="form-grup">
+                    <!--formulário login--> 
+                    <div class="form-grup pt-3">
                         <label for="usuario">Usuário</label>
-                        <input class="form-control form-control-lg" type="text" nome="usuario" id="usuario" placeholder="Seu usuário">
-                       
+                        <input class="form-control" type="text" nome="usuario" id="usuario" placeholder="Seu usuário">
                     </div>
-                    <br>
-                    <div class="form-grup">
+                   
+                    <div class="form-grup pt-3">
                         <label for="senha">Senha</label>
-                        <input class="form-control form-control-lg" type="password" nome="senha" id="senha" placeholder="Sua senha">
+                        <input class="form-control" type="password" nome="senha" id="senha" placeholder="Sua senha">
                     </div>
-                    <br>
-                    <br>
-
-                    <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-info">Entrar</button>
+                    
+                    <div class="d-flex justify-content-center mt-5">
+                        <button type="submit" class="btn enviar mr-4">Entrar</button>
                     </div>
+                    <!--/formulário login--> 
                
-                <hr class="mt-5 mb-5">
+                <hr class="mt-4 mb-4">
                 
                 <p class="text-center">
-                 Não possuí uma conta? <a href="">Cadastre-se</a>
+                 Não possuí uma conta? <a routerLink='/'>Cadastre-se</a>
                 </p>
              </div>
             </div>
 
         </div>
+
+        <!--coluna frase-->
+     <div class="col-md-5">
+        <p class="fontf text-right">O lixo de um é o</p>
+        <p class="fontf text-right">tesouro do outro</p>
+       </div>
+     <!--/coluna frase-->
 
 
     </div>
