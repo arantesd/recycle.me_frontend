@@ -1,0 +1,21 @@
+/* coluna-imagem-contato */
+.img-coluna{
+  width: 553px;
+  height: 446px;
+}
+.img-contato{
+  width: 30px;
+  height: 30px;
+}
+.star{
+  font-size: 11pt;
+  padding: 0 5px 0 0;
+}
+.valor{
+  font-weight: bold;
+}
+/* indicação de avaliação */
+.avaliacao{
+  border: solid 1px #41566B;
+  border-radius: 50px;
+}
