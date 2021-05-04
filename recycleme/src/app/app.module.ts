@@ -15,6 +15,7 @@ import { HomeLoginComponent } from './home-login/home-login.component';
 import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.component';
 import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
 import { ProdutoAvaliacaoComponent } from './produto-avaliacao/produto-avaliacao.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ProdutoAvaliacaoComponent } from './produto-avaliacao/produto-avaliacao
     HomeLoginComponent,
     ProdutoDetalheComponent,
     EditarPerfilComponent,
-    ProdutoAvaliacaoComponent
+    ProdutoAvaliacaoComponent,
+    SobreNosComponent
   ],
   imports: [
     BrowserModule,
