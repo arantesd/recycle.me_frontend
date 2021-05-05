@@ -3,9 +3,15 @@
 }
 
 #textHeader h1{
-    font-family: 'Roboto', 'sans-serif';
+    font-family: 'Roboto';
     font-size: 60px;
-    font-weight: 300;
+    font-weight:bold;
+    color: #41566B;
+}
+
+#textHeader h6{
+    font-family: 'Roboto';
+    color: #41566B;
 }
 
 #botaoCHOME{
@@ -18,4 +24,12 @@
     font-family: 'Roboto' ,'Bold';
     font-weight: 600;
     font-size: 40px;
+    color: #41566B ;
 }
+
+#cardsHome{
+    margin-bottom: 10cm;
+    font-weight: bold;
+    color: #41566B;
+}
+
