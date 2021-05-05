@@ -17,6 +17,7 @@ import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
 import { ProdutoAvaliacaoComponent } from './produto-avaliacao/produto-avaliacao.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { DicasComponent } from './dicas/dicas.component';
+import { MenuLoginComponent } from './menu-login/menu-login.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { DicasComponent } from './dicas/dicas.component';
     EditarPerfilComponent,
     ProdutoAvaliacaoComponent,
     SobreNosComponent,
-    DicasComponent
+    DicasComponent,
+    MenuLoginComponent
   ],
   imports: [
     BrowserModule,

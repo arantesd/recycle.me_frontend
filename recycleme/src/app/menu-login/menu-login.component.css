@@ -1,0 +1,32 @@
+.navegador{
+  font-family: Roboto;
+  color: rgba(65, 86, 107, 1);
+}
+
+#botaosair{
+  color: #41566B;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+#botaoCP{
+  color: rgba(65, 86, 107, 1);
+  background-color: rgba(36, 191, 60, 0.62);
+  font-weight:500;
+  border-radius: 30px;
+  
+  
+}
+#homeButton{
+  color: rgba(65, 86, 107, 1);
+}
+
+nav{
+  font-size: 18px;
+}
+
+img{
+  width: 29px;
+  height: 28px;
+}
