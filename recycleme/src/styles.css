@@ -1,14 +1,25 @@
 .body{
+
+    font-family: Roboto;
     font-family: Roboto; 
     overflow-x: hidden;
-    
 }
 ::-webkit-scrollbar {
     display: none;
 }
 
+#img-bg{
+    background: url('../src/assets/img/TelaLoginProjetoAGORAVAI.svg');
+    
+    height: 100%;
+    width: 100%;
+    min-height: 690px;
+    min-width: auto;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .padrao-font-color{
     color: #41566B
 }
-
-

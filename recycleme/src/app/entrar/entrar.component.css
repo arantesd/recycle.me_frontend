@@ -1,0 +1,21 @@
+ /* formulário */
+ input{
+    border-radius: 10px;
+  }
+
+.btn{
+    text-transform: uppercase;
+}
+
+.enviar{
+    color:rgba(209, 209, 209, 1);
+    background-color:rgba(65, 86, 107, 1)
+  }
+  
+ /* font frase */
+ .fontf{
+    font-size: 35pt;
+    color: #41566B;
+    line-height: 30px
+       
+  }
