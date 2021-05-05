@@ -16,6 +16,7 @@ import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.compo
 import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
 import { ProdutoAvaliacaoComponent } from './produto-avaliacao/produto-avaliacao.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { DicasComponent } from './dicas/dicas.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
     ProdutoDetalheComponent,
     EditarPerfilComponent,
     ProdutoAvaliacaoComponent,
-    SobreNosComponent
+    SobreNosComponent,
+    DicasComponent
   ],
   imports: [
     BrowserModule,
