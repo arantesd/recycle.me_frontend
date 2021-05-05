@@ -1,5 +1,5 @@
 <!--imagem background-->
-<div class="container-fluid" id="img-bg">
+<div class=" telaTotal container-fluid" id="img-bg">
 
   <div class="row d-flex justify-content-center">
     
@@ -13,58 +13,62 @@
       <form>
         <div class="form-group campo-form pt-3">
           <label for="formGroupExampleInput">Nome</label>
-          <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo">
+          <input [(ngModel)]='usuario.nome'  type="text" class="form-control" name="nome" id="nome" placeholder="Digite seu nome completo">
+        </div>
+        <div class="form-group campo-form ">
+          <label for="formGroupExampleInput">Usuario</label>
+          <input [(ngModel)]='usuario.usuario'  type="text" class="form-control" name="usuario" id="usuario" placeholder="Digite seu nome completo">
         </div>
         <div class="form-group campo-form">
             <label for="formGroupExampleInput">E-mail</label>
-            <input type="text" class="form-control" id="email" placeholder="Digite seu e-mail">
+            <input [(ngModel)]='usuario.email'  type="text" class="form-control" name="email" id="email" placeholder="Digite seu e-mail">
           </div>
 
           <div class="d-flex campo-form col-form">
             <div class="pr-5">
               <label for="formGroupExampleInput2">Senha</label>
-              <input type="text" class="form-control" id="senha" placeholder="Digite a senha">
+              <input  (input)='confirmSenha($event)' type="password" class="form-control" name="senha" name="senha" id="senha" placeholder="Digite a senha">
             </div>
             <div class="pr-5">
                 <label for="formGroupExampleInput2">Confirme a senha</label>
-                <input type="text" class="form-control" id="confirmSenha" placeholder="Digite a senha novamente">
+                <input  [(ngModel)]='usuario.senha'   type="password" class="form-control" name="confirmSenha" id="confirmSenha"  placeholder="Digite a senha novamente">
               </div>
          </div>
           
         <div class="d-flex campo-form col-form">
           <div class="pr-5 pt-3">
             <label for="formGroupExampleInput2">CNPJ</label>
-            <input type="text" class="form-control" id="cnpj" placeholder="Digite seu CNPJ, campus opcional">
+            <input [(ngModel)]='usuario.cnpj'  type="text" class="form-control" name="cnpj" id="cnpj" placeholder="Digite seu CNPJ, campus opcional">
           </div>
           <div class="pr-5 pt-3">
             <label for="formGroupExampleInput2">Telefone</label>
-            <input type="text" class="form-control" id="telefone" placeholder="Digite seu telefone com DDD">
+            <input [(ngModel)]='usuario.telefone' type="text" class="form-control" name="telefone" id="telefone" placeholder="Digite seu telefone com DDD">
           </div>
         </div>
 
         <div class="d-flex campo-form col-form">
             <div class="pr-5 pt-3">
               <label for="formGroupExampleInput2">Cep</label>
-              <input type="text" class="form-control" id="cep" placeholder="Digite o cep">
+              <input [(ngModel)]='usuario.cep' type="text" class="form-control" name="cep" id="cep" placeholder="Digite o cep">
             </div>
             <div class="pr-5 pt-3">
                 <label for="formGroupExampleInput2">Número</label>
-                <input type="text" class="form-control" id="numero" placeholder="Digite o nº da residência/comércio">
+                <input [(ngModel)]='usuario.numero' type="text" class="form-control" name="numero" id="numero" placeholder="Digite o nº da residência/comércio">
               </div>
          </div>
                     
         <div class="form-group campo-form pt-3">
             <label for="formGroupExampleInput">Logradouro</label>
-            <input type="text" class="form-control" id="rua" placeholder="Digite endereço, ex: rua, avenida">
+            <input [(ngModel)]='usuario.rua' type="text" class="form-control" name="rua" id="rua" placeholder="Digite endereço, ex: rua, avenida">
          </div>
          <div class="form-group campo-form">
             <label for="formGroupExampleInput">Bairro</label>
-            <input type="text" class="form-control" id="bairro" placeholder="Digite o bairro">
+            <input [(ngModel)]='usuario.bairro' type="text" class="form-control" name="bairro" id="bairro" placeholder="Digite o bairro">
          </div>
         
         <div class="d-flex justify-content-center mt-4">
           <button type="button" class="btn cancelar mr-5" routerLink='/home'>Cancelar</button>
-          <button style="width: 100px;" type="button" class="btn enviar mr-5" routerLink='/entrar'>Enviar</button>
+          <button style="width: 100px;" type="button" class="btn enviar mr-5" (click)='cadastrar()'>Enviar</button>
         </div>
       </form>
         <!--formulário novo cadastro--> 

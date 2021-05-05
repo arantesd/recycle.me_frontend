@@ -1,5 +1,10 @@
 
   /* formulário */
+  .telaTotal{
+    width: 1920px;
+    height: 1080px;
+  }
+
   input{
     border-radius: 10px;
   }
