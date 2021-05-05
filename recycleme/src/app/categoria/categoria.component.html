@@ -1,6 +1,6 @@
 <div class="container container-fluid">
-    <div class="row">
-        <div class="col-">
+    <div class="row d-flex">
+        <div class="col-md-3">
             <h2>Categorias</h2>
             <form>
                 <div class="form-categoria">
@@ -80,18 +80,47 @@
                 </div>
             </form>
         </div>
-    </div>
-</div>
 
-<div class="container tags-container">
-    <div class="row">
-        <div class="col-12">
-            <h2>Tags</h2>
-            <div class="tags-links">
-                <a href="#">Plástico</a>
-                <a href="#">Latinhas</a>
-                <a href="#">Embalagens</a>
-                <a href="#">Papelão</a>
+        <div class="col-md-9 pl-5">
+            <table class="padrao-font-color table">
+                <tbody>
+                    <tr class="card-produtos">
+                        <th scope="row" class="img-card">
+                            <img class="img-thumbnail" src="https://i.imgur.com/Ojna0sq.jpg" alt="Garrafas PET" />
+                        </th>
+                        <td>
+                            <h4>Pneu</h4>
+                            <h5>Usuario: Joãozin</h5>
+                            <h5>Bairro: Sapopemba</h5>
+                            <h5>Quantidade: 2</h5>
+                        </td>
+                        <td class="mais-detalhes">
+                            <h4>R$</h4>
+                            <button class="btn-detalhes hvr-grow padrao-font-color" routerLink="/detalhe">
+                Mais detalhes
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              </button>
+                            <button class="btn-favoritar hvr-grow padrao-font-color">
+                <i class="fa fa-heart-o p-md-1" aria-hidden="true"></i>Favoritar
+                usuário
+              </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="tags-container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Tags</h2>
+                <div class="tags-links">
+                    <a href="#">Plástico</a>
+                    <a href="#">Latinhas</a>
+                    <a href="#">Embalagens</a>
+                    <a href="#">Papelão</a>
+                </div>
             </div>
         </div>
     </div>
