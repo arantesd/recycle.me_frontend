@@ -5,18 +5,22 @@
   }
 
   .enviar{
-    color:rgba(209, 209, 209, 1);
-    background-color:rgba(65, 86, 107, 1)
+    background-color: rgba(36, 191, 60, 0.62)
+   
   }
+
+  .cancelar{
+    color: white;
+    background-color: #fa8376;
+  }
+
   @media only screen and (max-height: 766px) {
     .col-form input{
       width: 275px;
       
     }
   }
-  .btn{
-    text-transform: uppercase;
-}
+
   /* Mudanças para Tela Full Hd  */
   @media only screen and (min-height: 900px) {
     .titulo{

@@ -3,13 +3,8 @@
     border-radius: 10px;
   }
 
-.btn{
-    text-transform: uppercase;
-}
-
-.enviar{
-    color:rgba(209, 209, 209, 1);
-    background-color:rgba(65, 86, 107, 1)
+.entrar{
+    background-color: #BBEAD2
   }
   
  /* font frase */
