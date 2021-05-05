@@ -5,6 +5,7 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { DicasComponent } from './dicas/dicas.component';
 import { EntrarComponent } from './entrar/entrar.component';
+import { HomeLoginComponent } from './home-login/home-login.component';
 import { HomeComponent } from './home/home.component';
 import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
@@ -12,6 +13,7 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
+  {path: 'homeLogin', component: HomeLoginComponent},
   {path: 'cadastrar', component: CadastrarComponent},
   {path: 'entrar', component: EntrarComponent},
   {path: 'categoria', component: CategoriaComponent},
