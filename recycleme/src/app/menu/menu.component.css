@@ -6,12 +6,14 @@
 #botaoEntrar{
     color: #41566B;
     font-size: 18px;
+    font-weight: bold;
 }
 
 
 #botaoCC{
     color: rgba(65, 86, 107, 1);
     background-color: rgba(36, 191, 60, 0.62);
+    font-weight:500;
     
     
 }
