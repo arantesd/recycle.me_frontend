@@ -1,0 +1,27 @@
+<nav id="navegador" class="navbar navbar-expand-lg navbar-light bg-light">
+  <a id="homeButton" class="navbar-brand text-real" routerLink='/home'>RECYCLE.ME</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a  class="nav-link " routerLink='/categoria'>Categorias</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/dicas'>Dicas</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" routerLink='/sobre'>Contato</a>
+        </li>
+      
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-4" type="search" placeholder="Produtos, Categorias" aria-label="Pesquisar">
+      <a id="botaosair" class="mr-4" routerLink='/entrar'>Sair</a>
+      <button id="botaoCP" class="btn my-2 my-sm-0 mr-sm-4" type="submit" routerLink='/cadastrarProduto'>Cadastrar Produto</button> 
+      <img class="mr-sm-4" src="https://i.imgur.com/pCmqb7u.png" alt="perfil">
+    </form>
+  </div>
+</nav>
