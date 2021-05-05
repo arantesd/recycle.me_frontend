@@ -83,13 +83,12 @@ label {
 }
 
 .btn-salvar {
-    background: rgba(83, 179, 132, 0.62);
+    background: rgba(83, 179, 132, 0.23);
     border: none;
     border-radius: 12px;
     margin: 18px 10px 0px 0px;
     width: 88px;
     height: 40px;
-    text-transform: uppercase;
     color: #41566b;
 }
 
@@ -99,7 +98,6 @@ label {
     width: 88px;
     height: 40px;
     margin: 18px 10px 0px 0px;
-    text-transform: uppercase;
     color: #41566b;
 }
 
