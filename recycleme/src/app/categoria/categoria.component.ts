@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormArray, FormControl } from '@angular/forms';
+import { Produto } from '../model/Produto';
+import { Usuario } from '../model/Usuario';
+import { ProdutoService } from '../service/produto.service';
+import { UsuarioService } from '../service/usuario.service';
 
 @Component({
   selector: 'app-categoria',
@@ -7,9 +12,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriaComponent implements OnInit {
 
-  constructor() { }
+  produto: Produto = new Produto()
+  listaProduto: Produto[]
+  
+  constructor(
+    private produtoService: ProdutoService,
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.findAllProduto()
   }
-
+  findAllProduto(){
+    this.produtoService.getAllProdutos().subscribe((resp: Produto[])=>{
+      this.listaProduto = resp
+      console.log(this.listaProduto)
+    })
+  }
 }

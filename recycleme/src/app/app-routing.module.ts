@@ -19,7 +19,7 @@ const routes: Routes = [
   {path: 'categoria', component: CategoriaComponent},
   {path: 'sobre', component: SobreNosComponent},
   {path: 'cadastrarProduto', component: CadastrarProdutoComponent},
-  {path: 'detalhe', component: ProdutoDetalheComponent},
+  {path: 'detalhe/:id', component: ProdutoDetalheComponent},
   {path: 'dicas', component: DicasComponent}
 ];
 

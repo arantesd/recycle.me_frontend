@@ -5,24 +5,19 @@
             <form>
                 <div class="form-categoria">
                     <div>
-                        <input type="checkbox" id="metal" name="metal" value="metal" />
+                        <input type="checkbox" id="metal" name="metal" value="METAL"/>
                         <label for="metal">Metal</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="plastico" name="plastico" value="plastico" />
+                        <input type="checkbox" id="plastico" name="plastico" value="PLASTICO"/>
                         <label for="plastico">Plástico</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="vidro" name="vidro" value="vidro" />
+                        <input type="checkbox" id="vidro" name="vidro" value="VIDRO"/>
                         <label for="metal">Vidro</label>
                     </div>
-
                     <div>
-                        <input type="checkbox" id="metal" name="metal" value="metal" />
-                        <label for="metal">Metal</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="Madeira" name="Madeira" value="Madeira" />
+                        <input type="checkbox" id="Madeira" name="Madeira" value="MADEIRA"/>
                         <label for="metal">Madeira</label>
                     </div>
                 </div>
@@ -84,18 +79,18 @@
         <div class="col-md-9 pl-5">
             <table class="padrao-font-color table">
                 <tbody>
-                    <tr class="card-produtos">
-                        <th scope="row" class="img-card">
-                            <img class="img-thumbnail" src="https://i.imgur.com/Ojna0sq.jpg" alt="Garrafas PET" />
+                    <tr class="card-produtos" *ngFor="let produto of listaProduto">
+                        <th scope="row" class="">
+                            <img class="img-card" src="{{produto.foto}}" alt="Garrafas PET" />
                         </th>
                         <td>
-                            <h4>Pneu</h4>
-                            <h5>Usuario: Joãozin</h5>
-                            <h5>Bairro: Sapopemba</h5>
-                            <h5>Quantidade: 2</h5>
+                            <h4>{{produto.nome}}</h4>
+                            <h5>{{produto.usuario.nome}}</h5>
+                            <h5>{{produto.usuario.bairro}}</h5>
+                            <h5>Quantidade: {{produto.quantidade}}</h5>
                         </td>
                         <td class="mais-detalhes">
-                            <h4>R$</h4>
+                            <h4>R$ {{produto.preco}}</h4>
                             <button class="btn-detalhes hvr-grow padrao-font-color" routerLink="/detalhe">
                 Mais detalhes
                 <i class="fa fa-arrow-right" aria-hidden="true"></i>
