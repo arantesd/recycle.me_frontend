@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http' 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, } from '@angular/forms';
 import{HashLocationStrategy,LocationStrategy} from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +21,7 @@ import { ProdutoAvaliacaoComponent } from './produto-avaliacao/produto-avaliacao
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { DicasComponent } from './dicas/dicas.component';
 import { MenuLoginComponent } from './menu-login/menu-login.component';
+
 
 
 @NgModule({
@@ -46,7 +47,7 @@ import { MenuLoginComponent } from './menu-login/menu-login.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
   ],
   providers: [{
     provide: LocationStrategy,

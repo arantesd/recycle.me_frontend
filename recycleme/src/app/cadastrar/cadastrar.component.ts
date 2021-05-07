@@ -13,9 +13,10 @@ export class CadastrarComponent implements OnInit {
   usuario:Usuario = new Usuario
   confirmarSenha:string
 
+
   constructor(
     private authService:AuthService,
-    private router:Router
+    private router:Router,
   ) { }
 
   ngOnInit(){
@@ -38,5 +39,8 @@ export class CadastrarComponent implements OnInit {
       })
     }
   }
+
+ 
+
 
 }

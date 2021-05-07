@@ -19,6 +19,8 @@
     background-color: #fa8376;
   }
 
+  
+
   @media only screen and (max-height: 766px) {
     .col-form input{
       width: 275px;
