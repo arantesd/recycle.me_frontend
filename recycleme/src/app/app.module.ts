@@ -1,4 +1,4 @@
-import { NgModule, LOCALE_ID } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http' 
 import { FormsModule } from '@angular/forms';
@@ -17,10 +17,10 @@ import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto
 import { HomeLoginComponent } from './home-login/home-login.component';
 import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.component';
 import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
-import { ProdutoAvaliacaoComponent } from './produto-avaliacao/produto-avaliacao.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { DicasComponent } from './dicas/dicas.component';
 import { MenuLoginComponent } from './menu-login/menu-login.component';
+import { UsuarioAvaliacaoComponent } from './usuario-avaliacao/usuario-avaliacao.component';
 
 
 @NgModule({
@@ -36,10 +36,10 @@ import { MenuLoginComponent } from './menu-login/menu-login.component';
     HomeLoginComponent,
     ProdutoDetalheComponent,
     EditarPerfilComponent,
-    ProdutoAvaliacaoComponent,
     SobreNosComponent,
     DicasComponent,
-    MenuLoginComponent
+    MenuLoginComponent,
+    UsuarioAvaliacaoComponent
   ],
   imports: [
     BrowserModule,

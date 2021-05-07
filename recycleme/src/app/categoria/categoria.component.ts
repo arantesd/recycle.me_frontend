@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl } from '@angular/forms';
 import { Produto } from '../model/Produto';
-import { Usuario } from '../model/Usuario';
 import { ProdutoService } from '../service/produto.service';
-import { UsuarioService } from '../service/usuario.service';
+import { Avaliacao } from '../model/Avaliacao';
+import { ProdutoAvaliacaoService } from '../service/produto-avaliacao.service';
 
 @Component({
   selector: 'app-categoria',
@@ -14,9 +13,12 @@ export class CategoriaComponent implements OnInit {
 
   produto: Produto = new Produto()
   listaProduto: Produto[]
+  avaliacao: Avaliacao = new Avaliacao();
+  listaAvaliacao: Avaliacao[];
   
   constructor(
     private produtoService: ProdutoService,
+    private avaliacaoService: ProdutoAvaliacaoService
   ) { }
 
   ngOnInit() {
@@ -27,5 +29,5 @@ export class CategoriaComponent implements OnInit {
       this.listaProduto = resp
       console.log(this.listaProduto)
     })
-  }
+  }  
 }
