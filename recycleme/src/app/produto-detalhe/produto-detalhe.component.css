@@ -3,6 +3,10 @@
   width: 553px;
   height: 446px;
 }
+.img-avaliacao{
+  width: 30px;
+  height: 30px;
+}
 .img-contato{
   width: 30px;
   height: 30px;
@@ -18,4 +22,18 @@
 .avaliacao{
   border: solid 1px #41566B;
   border-radius: 50px;
+}
+
+.pd-10{
+padding-left: 10;
+}
+
+.enviarAvaliacao{
+  background-color: rgba(36, 191, 60, 0.62)
+ 
+}
+
+.cancelar{
+  color: white;
+  background-color: #fa8376;
 }
