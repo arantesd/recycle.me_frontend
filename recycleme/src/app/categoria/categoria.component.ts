@@ -16,7 +16,7 @@ export class CategoriaComponent implements OnInit {
   listaAvaliacao: Avaliacao[]
   constructor(
     private produtoService: ProdutoService,
-    private avaliacaoService: ProdutoAvaliacaoService
+
   ){ }
 
 
