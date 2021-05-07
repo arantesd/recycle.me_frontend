@@ -1,4 +1,5 @@
 <app-menu></app-menu>
+
 <div class="m-5 pl-5 pt-5">
   <h2 class="pl-3 padrao-font-color">Vidro</h2>
 </div>
@@ -20,10 +21,17 @@
     <div class="pb-5">
       <span>Região </span><span>São Paulo - Zona Leste</span>
     </div>
-      <span>Entrar em contato</span>
+      <span>Entrar em contato</span> 
       <div class="pt-3 pl-4">
-        <a href=""><img class="img-contato" src="https://i.imgur.com/AeiK9eQ.png" alt="Imagem Whatsapp"></a>
+        <a href=""><img class="img-contato hvr-grow" src="https://i.imgur.com/AeiK9eQ.png" alt="Imagem Whatsapp"></a>
+        
       </div>
+        <div class="mt-4"> 
+            <span>Avalie o vendedor</span>
+            <div class="pt-3 pl-4">
+                <a> <img class="  img-avaliacao hvr-grow" src="https://i.imgur.com/hw2DduK.png" alt="Icone de avaliacao "data-toggle="modal" data-target="#modalExemplo "></a>
+           </div>  
+        </div>
 <!-- /coluna-imagem-contato -->
   </div>
 </div>
@@ -50,6 +58,50 @@
     </div>
   </div>
 </div>
+
 <!--/avaliacao-->
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Deixe sua avalição sobre o produto!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <label for="customRange2 text -center">Deixe sua nota</label>
+          <input type="range" class="custom-range" min="0" max="5" id="avaliacao">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Seu Nome</span>
+          </div>
+          <input type="text" class="form-control" placeholder="..." aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Comentario</span>
+          </div>
+          <textarea placeholder="400 caracteres no maximo..." rows="4" class="form-control" aria-label="With textarea"></textarea>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn cancelar" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn enviarAvaliacao">Enviar Avaliação</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- /Modal -->
+
+
 <div></div>
+
 <app-footer></app-footer>

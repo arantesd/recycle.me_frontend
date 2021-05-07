@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Produto } from '../model/Produto';
+import { ProdutoService } from '../service/produto.service';
+import { Avaliacao } from '../model/Avaliacao';
 
 @Component({
   selector: 'app-categoria',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriaComponent implements OnInit {
 
-  constructor() { }
+  produto: Produto = new Produto()
+  listaProduto: Produto[]
+  avaliacao: Avaliacao = new Avaliacao();
+  listaAvaliacao: Avaliacao[]
+  constructor(
+    private produtoService: ProdutoService,
 
-  ngOnInit(): void {
+  ){ }
+
+
+  ngOnInit() {
+    this.findAllProduto()
   }
 
+
+  findAllProduto(){
+    this.produtoService.getAllProdutos().subscribe((resp: Produto[])=>{
+      this.listaProduto = resp
+      console.log(this.listaProduto)
+    })
+  } 
 }

@@ -9,6 +9,7 @@ import { HomeLoginComponent } from './home-login/home-login.component';
 import { HomeComponent } from './home/home.component';
 import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { UsuarioAvaliacaoComponent } from './usuario-avaliacao/usuario-avaliacao.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -19,8 +20,9 @@ const routes: Routes = [
   {path: 'categoria', component: CategoriaComponent},
   {path: 'sobre', component: SobreNosComponent},
   {path: 'cadastrarProduto', component: CadastrarProdutoComponent},
-  {path: 'detalhe', component: ProdutoDetalheComponent},
-  {path: 'dicas', component: DicasComponent}
+  {path: 'detalhe/:id', component: ProdutoDetalheComponent},
+  {path: 'dicas', component: DicasComponent},
+  {path: 'usuarioAvaliacao', component: UsuarioAvaliacaoComponent}
 ];
 
 @NgModule({
