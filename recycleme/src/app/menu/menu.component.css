@@ -1,26 +1,27 @@
-.navegador{
+.navegador {
     font-family: Roboto;
     color: rgba(65, 86, 107, 1);
 }
 
-#botaoEntrar{
-    color: #41566B;
+#botaoEntrar {
+    color: #41566b;
     font-size: 18px;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
-
-#botaoCC{
+#botaoCC {
     color: rgba(65, 86, 107, 1);
     background-color: rgba(36, 191, 60, 0.62);
-    font-weight:500;
-    
-    
-}
-#homeButton{
-    color: rgba(65, 86, 107, 1);
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
-nav{
+#homeButton {
+    color: rgba(65, 86, 107, 1);
+    text-transform: uppercase;
+}
+
+nav {
     font-size: 18px;
 }
