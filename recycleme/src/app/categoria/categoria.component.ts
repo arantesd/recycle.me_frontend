@@ -15,19 +15,21 @@ export class CategoriaComponent implements OnInit {
   listaProduto: Produto[]
   avaliacao: Avaliacao = new Avaliacao();
   listaAvaliacao: Avaliacao[];
-  
+
   constructor(
     private produtoService: ProdutoService,
     private avaliacaoService: ProdutoAvaliacaoService
-  ) { }
+  ){}
+   
 
   ngOnInit() {
     this.findAllProduto()
   }
+
   findAllProduto(){
     this.produtoService.getAllProdutos().subscribe((resp: Produto[])=>{
       this.listaProduto = resp
       console.log(this.listaProduto)
     })
-  }  
+  } 
 }
