@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Avaliacao } from '../model/Avaliacao';
+import { ProdutoAvaliacaoService } from '../service/produto-avaliacao.service';
 
 @Component({
   selector: 'app-categoria',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriaComponent implements OnInit {
 
-  constructor() { }
+  avaliacao: Avaliacao = new Avaliacao();
+  listaAvaliacao: Avaliacao[];
+
+  constructor(
+     private avaliacaoService: ProdutoAvaliacaoService
+  ) { }
 
   ngOnInit(): void {
   }
 
+  
 }
