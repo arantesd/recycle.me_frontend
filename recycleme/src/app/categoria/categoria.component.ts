@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Avaliacao } from '../model/Avaliacao';
-import { ProdutoAvaliacaoService } from '../service/produto-avaliacao.service';
 
 @Component({
   selector: 'app-categoria',
@@ -10,14 +9,12 @@ import { ProdutoAvaliacaoService } from '../service/produto-avaliacao.service';
 export class CategoriaComponent implements OnInit {
 
   avaliacao: Avaliacao = new Avaliacao();
-  listaAvaliacao: Avaliacao[];
-
+  listaAvaliacao: Avaliacao[]
   constructor(
-     private avaliacaoService: ProdutoAvaliacaoService
+    
   ) { }
 
   ngOnInit(): void {
   }
 
-  
 }

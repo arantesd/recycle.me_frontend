@@ -5,9 +5,10 @@ import { environment } from 'src/environments/environment.prod';
 import { Avaliacao } from '../model/Avaliacao';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class ProdutoAvaliacaoService {
+export class UsuarioAvaliacaoService {
+
   constructor(private http: HttpClient) {}
 
   token = {
