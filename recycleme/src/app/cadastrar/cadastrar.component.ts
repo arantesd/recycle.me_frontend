@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
@@ -17,11 +18,14 @@ export class CadastrarComponent implements OnInit {
   constructor(
     private authService:AuthService,
     private router:Router,
+    private formBuider: FormBuilder
+    
+
   ) { }
 
   ngOnInit(){
     window.scroll(0,0)
-
+    
   }
 
   confirmSenha(event:any){
@@ -35,11 +39,23 @@ export class CadastrarComponent implements OnInit {
       this.authService.cadastrar(this.usuario).subscribe((resp:Usuario)=>{
         this.usuario = resp 
         this.router.navigate(['/entrar'])
-        alert('Usuario cadastrado com sucesso')
+        alert('Usuario cadastrado com sucesso!')
       })
+    } 
+    (erro: { status: number; })=>{
+    if(erro.status == 400){
+      alert('É necessário preencher todos os dados corretamente.')
+    }else{
+      alert('Usuario cadastrado com sucesso!')
     }
   }
 
+    
+  }
+
+  
+
+  
  
 
 

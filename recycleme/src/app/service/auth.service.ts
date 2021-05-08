@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
-import { HomeLoginComponent } from '../home-login/home-login.component';
+import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
 import { UsuarioLogin } from '../model/UsuarioLogin';
 
@@ -32,4 +32,9 @@ export class AuthService {
 
     return ok
   }
+
+  registrar(produto:Produto): Observable<Produto>{
+    return this.http.post<Produto>('http://localhost:8080/api/v1/recycleMe/produto', produto)
+  }
+  
 }

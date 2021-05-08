@@ -10,60 +10,71 @@
     <!--/titulo-->
 
       <!--formulário novo cadastro-->
-      <form>
+      <form id="formExemplo" data-toggle="validator" role="form">
         <div class="form-group campo-form pt-3">
           <label for="formGroupExampleInput">Nome</label>
-          <input [(ngModel)]='usuario.nome' type="text" class="form-control" name="nome" id="nome" placeholder="Digite seu nome completo">
+          <input [(ngModel)]='usuario.nome'  type="text" class="form-control" name="nome" id="nome" placeholder="Digite seu nome completo" data-minlength="5" data-maxlenth="100" required>
+          <span class="help-block">Mínimo de cinco (5) digitos e máximo de cem (100)</span>
         </div>
         <div class="form-group campo-form ">
           <label for="formGroupExampleInput">Usuario</label>
-          <input [(ngModel)]='usuario.usuario'  type="text" class="form-control" name="usuario" id="usuario" placeholder="Digite seu nome de usuário">
+          <input [(ngModel)]='usuario.usuario'  type="text" class="form-control" name="usuario" id="usuario" placeholder="Digite seu nome completo" data-minlength="6" data-maxlenth="60" required>
+          <span class="help-block">Mínimo de seis (6) digitos e máximo de sessenta (60)</span>
         </div>
         <div class="form-group campo-form">
-            <label for="formGroupExampleInput">E-mail</label>
-            <input [(ngModel)]='usuario.email' type="text" class="form-control" name="email" id="email" placeholder="nome@email.com" required>
+            <label for="inputEmail" class="control-label">E-mail</label>
+            <input [(ngModel)]='usuario.email'  type="email" class="form-control" name="email" id="email" placeholder="Digite seu e-mail" data-error="Por favor, informe um e-mail válido." data-minlength="5" data-maxlenth="45" required>
+            <div class="help-block with-errors"></div>
+            <span class="help-block">Mínimo de cinco (5) digitos e máximo de quarenta e cinto (45)</span>
           </div>
 
           <div class="d-flex campo-form col-form">
             <div class="pr-5">
-              <label for="formGroupExampleInput2">Senha</label>
-              <input  (input)='confirmSenha($event)' type="password" class="form-control" name="senha" name="senha" id="senha" placeholder="Digite a senha">
+              <label for="inputPassword" class="control-label">Senha</label>
+              <input (input)='confirmSenha($event)' type="password" class="form-control" name="senha" id="senha" placeholder="Digite a senha" data-minlength="6" required>
+              <span class="help-block">Mínimo de seis (6) digitos</span>
             </div>
             <div class="pr-5">
-                <label for="formGroupExampleInput2">Confirme a senha</label>
-                <input  [(ngModel)]='usuario.senha'   type="password" class="form-control" name="confirmSenha" id="confirmSenha"  placeholder="Digite a senha novamente">
+                <label for="inputConfirm" class="control-label">Confirme a senha</label>
+                <input  [(ngModel)]='usuario.senha' type="password" class="form-control" name="confirmSenha" id="confirmSenha" placeholder="Digite a senha novamente" data-match-error="Atenção! As senhas não estão iguais." data-match="#inputPassword" required>
+                <div class="help-block with-errors"></div>
               </div>
          </div>
           
         <div class="d-flex campo-form col-form">
           <div class="pr-5 pt-3">
             <label for="formGroupExampleInput2">CNPJ</label>
-            <input [(ngModel)]='usuario.cnpj'  type="text" class="form-control" name="cnpj" id="cnpj" placeholder="Digite seu CNPJ, campus opcional">
+            <input [(ngModel)]='usuario.cnpj' type="text" class="form-control" name="cnpj" id="cnpj" placeholder="Digite seu CNPJ, campus opcional" data-minlength="5" data-maxlenth="255" >
+            <span class="help-block">Mínimo de cinco (5) digitos e máximo de duzentos e cinquenta e cinto (255)</span>
           </div>
           <div class="pr-5 pt-3">
             <label for="formGroupExampleInput2">Telefone</label>
-            <input [(ngModel)]='usuario.telefone' type="text" class="form-control" name="telefone" id="telefone" placeholder="Digite seu telefone com DDD">
+            <input [(ngModel)]='usuario.telefone' type="text" class="form-control" name="telefone" id="telefone" placeholder="Digite seu telefone com DDD" data-minlength="5" data-maxlenth="13" required>
+            <span class="help-block">Mínimo de cinco (5) digitos e máximo de treze(13). Somente números</span>
           </div>
         </div>
 
         <div class="d-flex campo-form col-form">
             <div class="pr-5 pt-3">
               <label for="formGroupExampleInput2">Cep</label>
-              <input [(ngModel)]='usuario.cep' type="text" class="form-control" name="cep" id="cep" placeholder="Digite o cep">
+              <input [(ngModel)]='usuario.cep' type="text" class="form-control" name="cep" id="cep" placeholder="Digite o cep" data-maxlenth="10" required>
+              <span class="help-block">Máximo de dez (10) digitos</span>
             </div>
             <div class="pr-5 pt-3">
                 <label for="formGroupExampleInput2">Número</label>
-                <input [(ngModel)]='usuario.numero' type="text" class="form-control" name="numero" id="numero" placeholder="Digite o nº da residência/comércio">
+                <input [(ngModel)]='usuario.numero' type="text" class="form-control" name="numero" id="numero" placeholder="Digite o nº da residência/comércio" required>
               </div>
          </div>
                     
         <div class="form-group campo-form pt-3">
             <label for="formGroupExampleInput">Logradouro</label>
-            <input [(ngModel)]='usuario.rua' type="text" class="form-control" name="rua" id="rua" placeholder="Digite endereço, ex: rua, avenida">
+            <input [(ngModel)]='usuario.rua' type="text" class="form-control" name="rua" id="rua" placeholder="Digite endereço, ex: rua, avenida" data-maxlenth="45" required>
+            <span class="help-block">Máximo de quarenta e cinco (45) digitos</span>
          </div>
          <div class="form-group campo-form">
             <label for="formGroupExampleInput">Bairro</label>
-            <input [(ngModel)]='usuario.bairro' type="text" class="form-control" name="bairro" id="bairro" placeholder="Digite o bairro">
+            <input [(ngModel)]='usuario.bairro' type="text" class="form-control" name="bairro" id="bairro" placeholder="Digite o bairro" data-maxlenth="45" required>
+            <span class="help-block">Máximo de quarenta e cinco (45) digitos</span>
          </div>
         
         <div class="d-flex justify-content-center mt-4">
@@ -87,5 +98,4 @@
 </div>
 
   
-
 
