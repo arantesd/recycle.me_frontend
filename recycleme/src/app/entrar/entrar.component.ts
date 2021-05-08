@@ -30,7 +30,7 @@ export class EntrarComponent implements OnInit {
       environment.token = this.usuarioLogin.token
       environment.usuario = this.usuarioLogin.usuario
 
-      this.router.navigate(['/home'])
+      this.router.navigate(['/home', this.usuarioLogin])
 
       
     },erro=> {

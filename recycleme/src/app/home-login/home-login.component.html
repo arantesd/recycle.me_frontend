@@ -6,8 +6,8 @@
 <!-- /titulo-->
 <!-- caixa de produtos cadastrados -->
   <div class="d-flex justify-content-center align-items-center m-5">
-    <span class="container-xl box-produtos d-flex justify-content-center align-items-center">
-      <h2>Você não possui produtos publicados</h2>
+    <span class="container-xl box-produtos d-flex justify-content-center align-items-center" *ngFor="let usuario of listaUsuario">
+      <h2>{{usuario.nome}}</h2>
     </span>
   </div>
 <!-- caixa de produtos cadastrados -->

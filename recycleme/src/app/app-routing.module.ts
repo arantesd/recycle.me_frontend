@@ -14,7 +14,7 @@ import { UsuarioAvaliacaoComponent } from './usuario-avaliacao/usuario-avaliacao
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
-  {path: 'homeLogin', component: HomeLoginComponent},
+  {path: 'homeLogin/:id', component: HomeLoginComponent},
   {path: 'cadastrar', component: CadastrarComponent},
   {path: 'entrar', component: EntrarComponent},
   {path: 'categoria', component: CategoriaComponent},
