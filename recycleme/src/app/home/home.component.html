@@ -9,13 +9,18 @@
                 <h6>
                     Anuncie compras de recicláveis, entre em contato com cooperativas e pessoas interessadas, aprenda como reciclar.
                 </h6>
-                <h6 class="font-weight-bold">
-                    Clique no botão abaixo e crie sua conta!
+                <h6 class="font-weight-bold mb-4">
+                    <span *ngIf="!auth.logado()">Clique no botão abaixo e crie sua conta! </span>
+                    <span *ngIf="auth.logado()">Clique no botão abaixo para ver seus produtos!</span>
                 </h6>
 
-                <button id="botaoCHOME" type="button" class="btn" routerLink="/cadastrar">
+
+        <button *ngIf="!auth.logado()" id="botaoCHOME" type="button" class="btn" routerLink="/cadastrar">
           Crie sua Conta
-        </button>
+        </button> 
+        <span *ngIf="auth.logado()" id="botaoCHOME" type="button" class="btn" [routerLink]="['/homeLogin', usuario.id]">
+            Meus produtos 
+        </span>
             </div>
             <div class="col-md-6">
                 <img src="../../assets/img/Group 27.png" alt="" />
@@ -119,3 +124,4 @@
     </div>
     <!-- carousel -->
 </div>
+<app-footer></app-footer>
