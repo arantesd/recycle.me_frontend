@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Avaliacao } from '../model/Avaliacao';
+import { Usuario } from '../model/Usuario';
+import { UsuarioLogin } from '../model/UsuarioLogin';
 import { UsuarioAvaliacaoService } from '../service/usuario-avaliacao.service';
 
 @Component({
@@ -10,6 +12,7 @@ import { UsuarioAvaliacaoService } from '../service/usuario-avaliacao.service';
 export class UsuarioAvaliacaoComponent implements OnInit {
   avaliacao: Avaliacao = new Avaliacao();
   listaAvaliacao: Avaliacao[];
+  userLogin: UsuarioLogin = new UsuarioLogin;
 
   constructor(private avaliacaoService: UsuarioAvaliacaoService) { }
 
@@ -47,6 +50,9 @@ export class UsuarioAvaliacaoComponent implements OnInit {
         this.avaliacao = resp;
         alert('Avaliação postada com sucesso!');
         this.avaliacao = new Avaliacao();
+
+
+        console.log(this.userLogin.id)
       });
   }
 }
