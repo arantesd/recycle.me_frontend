@@ -26,12 +26,19 @@
         <a class="nav-link" routerLink="/sobre">Contato</a>
     </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+    <form *ngIf="!auth.logado()"  class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-4" type="search" placeholder="Produtos, Categorias" aria-label="Pesquisar" />
         <a id="botaoEntrar" class="mr-4" routerLink="/entrar">Entrar</a>
         <button id="botaoCC" class="btn my-2 my-sm-0" type="submit" routerLink="/cadastrar">
         Crie sua conta
       </button>
     </form>
+    <form *ngIf="auth.logado()"  class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-4" type="search" placeholder="Produtos, Categorias" aria-label="Pesquisar" />
+      <a id="botaoEntrar" class="mr-4" (click)="sair()">Sair</a>
+      <button id="botaoCC" class="btn my-2 my-sm-0" type="submit" routerLink="/cadastrar">
+      Cadastrar Produto
+    </button>
+  </form>
     </div>
 </nav>
