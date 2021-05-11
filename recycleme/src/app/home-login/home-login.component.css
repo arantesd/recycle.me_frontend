@@ -18,14 +18,29 @@ h2 {
     height: 196px;
 }
 
+.btn-danger {
+    border: none;
+    border-radius: 136px;
+    padding: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
 .btn-editar {
     background: rgba(83, 179, 132, 0.23);
+    border: none;
     border-radius: 136px;
     padding: 10px;
     color: rgba(65, 86, 107, 1);
     font-size: 14px;
-    font-weight: bold;
     text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-editar:hover {
+    background: rgba(83, 179, 132, 0.5);
 }
 
 @media only screen and (max-height: 766px) {
@@ -49,7 +64,14 @@ h2 {
 }
 
 
+/* form */
+
+
 /* coluna imagem */
+
+form {
+    color: rgba(65, 86, 107, 1);
+}
 
 img {
     width: 480px;
@@ -70,4 +92,36 @@ input {
 
 select {
     border-radius: 10px;
+}
+
+.cadastrar {
+    background-color: rgba(36, 191, 60, 0.62);
+}
+
+.cancelar {
+    color: rgba(209, 209, 209, 1);
+    background-color: rgba(65, 86, 107, 1);
+}
+
+@media only screen and (max-height: 766px) {
+    .titulo {
+        margin-left: 70px;
+    }
+    .col-form input {
+        width: 191px;
+    }
+}
+
+
+/*
+  Mudanças para Tela Full Hd
+*/
+
+@media only screen and (min-height: 900px) {
+    .titulo {
+        margin-left: 110px;
+    }
+    .col-form input {
+        width: 283px;
+    }
 }
