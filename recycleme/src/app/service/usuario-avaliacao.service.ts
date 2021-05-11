@@ -3,11 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Avaliacao } from '../model/Avaliacao';
+import { Usuario } from '../model/Usuario';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioAvaliacaoService {
+
 
   constructor(private http: HttpClient) {}
 
@@ -47,7 +49,8 @@ export class UsuarioAvaliacaoService {
 
   postAvaliacao(avaliacao: Avaliacao): Observable<Avaliacao> {
     return this.http.post<Avaliacao>(
-      "http://localhost:8080/api/v1/recycleMe/usuario/avaliacao",avaliacao ,
+      'http://localhost:8080/api/v1/recycleMe/usuario/avaliacao/nova/',
+      avaliacao,
       this.token
     );
   }

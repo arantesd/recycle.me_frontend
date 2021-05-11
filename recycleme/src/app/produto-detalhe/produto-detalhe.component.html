@@ -9,8 +9,8 @@
   <div class="col-6">
     <img class="img-coluna" src="https://i.imgur.com/Q6aKIgo.jpg">
   </div>
-  <div class="col4 padrao-font-color">
-    <span>Usuáio:</span><span>Joaozin</span>
+  <div  class="col4 padrao-font-color">
+    <span>Usuário:</span><span>{{produto.usuario.nome}}</span>
     <div class="padrao-font-color pt-3 pb-3">
       <i class="fas fa-star star"></i>
       <i class="fas fa-star star"></i>
@@ -19,7 +19,7 @@
       <i class="far fa-star star"></i>
     </div>
     <div class="pb-5">
-      <span>Região </span><span>São Paulo - Zona Leste</span>
+      <span>Região </span><span>{{produto.usuario.bairro}}</span>
     </div>
       <span>Entrar em contato</span> 
       <div class="pt-3 pl-4">
@@ -74,18 +74,19 @@
       <div class="modal-body">
         <div>
           <label for="customRange2 text -center">Deixe sua nota</label>
-          <input [(ngModel)]="avaliacoes.avaliacao" name="avalicao" id="avaliacao" type="text" min="0" max="5">
-        </div>
+          <input [(ngModel)]='avaliacao.avaliacao'  name="nota" type="range" class="form-control" min="1" max="5" id="avaliacao" >
+        </div>       
+
         <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text">Comentario</span>
           </div>
-          <textarea [(ngModel)]='avaliacoes.comentario' id="comentario" name="comentario" placeholder="400 caracteres no maximo..." rows="4" class="form-control" aria-label="With textarea"></textarea>
+          <textarea  [(ngModel)]='avaliacao.comentario' id="comentario" name="comentario" placeholder="400 caracteres no maximo..." rows="4" class="form-control" aria-label="With textarea"></textarea>
           </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn cancelar" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn enviarAvaliacao" (click)="postarAvaliacao()">Enviar Avaliação</button>
+        <button type="button" class="btn enviarAvaliacao" data-dismiss="modal" (click)='cadastrar()'>Enviar Avaliação</button>
       </div>
     </div>
   </div>
