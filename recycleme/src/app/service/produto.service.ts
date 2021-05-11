@@ -40,4 +40,8 @@ export class ProdutoService {
   deleteProduto(id: number){
     return this.http.delete(`http://localhost:8080/api/v1/recycleMe/produto/${id}`, this.token)
   }
+
+  putProduto(produto: Produto): Observable<Produto>{
+    return this.http.put<Produto>('http://localhost:8080/api/v1/recycleMe/produto', produto, this.token)
+  }
 }

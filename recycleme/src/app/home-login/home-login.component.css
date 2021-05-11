@@ -3,6 +3,11 @@ h2 {
     padding-right: 40px;
 }
 
+.produtos {
+    display: flex;
+    justify-content: top;
+}
+
 .box-produtos {
     border: solid 1px;
     height: 688px;
@@ -11,6 +16,10 @@ h2 {
 .card {
     display: flex;
     justify-content: left;
+    border: none;
+    height: 300px;
+    text-align: center;
+    color: #41566B
 }
 
 .card-img-top {

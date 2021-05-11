@@ -5,24 +5,17 @@
 </div>
 <!-- /titulo-->
 <!-- caixa de produtos cadastrados -->
-<div class="d-flex justify-content-center align-items-center m-5">
-    <span class="container-xl box-produtos d-flex justify-content-center align-items-center">
+<div class="justify-content-center align-items-center m-5">
+    <span class=" produtos container-xl box-produtos">
   <div class="card" style="width: 18rem" *ngFor='let item of usuario.produto'>
     <img class="card-img-top" src="{{item.foto}}" alt="Imagem de capa do card" />
     <div class="card-body">
       <h5 class="card-title">{{item.nome}}</h5>
-      
-   
-        
         <button class="btn-editar" data-toggle="modal" data-target="#exampleModalPreview" (click)="showModal(item.id)">Editar Produto</button>
-   
     </div>
   </div>
 </span>
 </div>
-
-
-
 
 <!-- Modal Editar Produto -->
 <div class="modal fade right" id="exampleModalPreview" tabindex="-1" role="dialog" aria-labelledby="exampleModalPreviewLabel" aria-hidden="true">
@@ -43,20 +36,24 @@
                         <form>
                             <div class="form-group campo-form">
                                 <label for="formGroupExampleInput">Nome do Produto</label>
-                                <input name="nome" type="text" class="form-control" id="formGroupExampleInput" placeholder="Insira o nome do Produto" />
+                                <input [(ngModel)]='produto.nome' name="nome" type="text" class="form-control" id="formGroupExampleInput" placeholder="Insira o nome do Produto" />
+                            </div>
+                            <div class="form-group campo-form">
+                                <label for="formGroupExampleInput">Link da Foto do Produto</label>
+                                <input [(ngModel)]='produto.foto' class="form-control" type="text" name="foto" id="foto" placeholder="Link da foto do produto">
                             </div>
                             <div class="segunda-linha campo-form">
                                 <div class="pr-5">
                                     <label for="preco">Preço</label>
-                                    <input name="preco" type="number" class="form-control" id="preco" placeholder="Digite o preço" />
+                                    <input [(ngModel)]='produto.preco' name="preco" type="number" class="form-control" id="preco" placeholder="Digite o preço" />
                                 </div>
                                 <div class="pr-5">
                                     <label for="quantidade">Quantidade</label>
-                                    <input name="quantidade" type="number" class="form-control" id="quantidade" min="1" max="150" placeholder="Digite a Quantidade" />
+                                    <input [(ngModel)]='produto.quantidade' name="quantidade" type="number" class="form-control" id="quantidade" min="1" max="150" placeholder="Digite a Quantidade" />
                                 </div>
                                 <div>
                                     <label for="peso">Peso</label>
-                                    <input name="peso" type="number" class="form-control" id="peso" placeholder="Digite o preço" />
+                                    <input [(ngModel)]='produto.peso' name="peso" type="number" class="form-control" id="peso" placeholder="Digite o preço" />
                                 </div>
                             </div>
 
@@ -68,7 +65,7 @@
                                 <button type="button" class="btn-danger" (click)='apagar()'>
                 Apagar Produto
               </button>
-                                <button type="button" class="btn-editar" routerLink="/homeLogin">
+                                <button type="button" class="btn-editar" (click)='atualizar()'>
                 Atualizar Produto
               </button>
                             </div>

@@ -10,15 +10,15 @@
                     Anuncie compras de recicláveis, entre em contato com cooperativas e pessoas interessadas, aprenda como reciclar.
                 </h6>
                 <h6 class="font-weight-bold mb-4">
-                    <span *ngIf="!auth.logado()">Clique no botão abaixo e crie sua conta! </span>
-                    <span *ngIf="auth.logado()">Clique no botão abaixo para ver seus produtos!</span>
+                    <span class="text-center" *ngIf="!auth.logado()">Clique no botão abaixo e crie sua conta! </span>
+                    <span class="text-center" *ngIf="auth.logado()">Clique no botão abaixo para ver seus produtos!</span>
                 </h6>
 
 
-        <button *ngIf="!auth.logado()" id="botaoCHOME" type="button" class="btn" routerLink="/cadastrar">
+                <button *ngIf="!auth.logado()" id="botaoCHOME" type="button" class="btn" routerLink="/cadastrar">
           Crie sua Conta
-        </button> 
-        <span *ngIf="auth.logado()" id="botaoCHOME" type="button" class="btn" routerLink="/homeLogin">
+        </button>
+                <span *ngIf="auth.logado()" id="botaoCHOME" type="button" class="btn" routerLink="/homeLogin">
             Meus produtos 
         </span>
             </div>
@@ -34,17 +34,17 @@
 <!-- cards -->
 
 <div id="cardsHome" class="container d-flex justify-content-center mt-4 mb-5 pd-5">
-    <div class="row">
+    <div class="row cardsHome">
         <div class="terras col-md-3 mr-4">
-            <img src="../../assets/img/mundinho.png" alt=" logo de um mundo pequeno " height="150">
+            <img src="../../assets/img/mundinho.png" alt="logo de um mundo pequeno" height="150">
             <p class="ml-5">Reciclar</p>
         </div>
         <div class="terras col-md-3 mr-4">
-            <img src="../../assets/img/mundinho2.png" alt="mundinho" height="150" />
+            <img src="../../assets/img/mundinho2.png" alt="logo de um mundo pequeno" height="150" />
             <p class="ml-5">Reutilizar</p>
         </div>
         <div class="terras col-md-3">
-            <img src="../../assets/img/mundinho3.png" alt="mundinho" height="150" />
+            <img src="../../assets/img/mundinho3.png" alt="logo de um mundo pequeno" height="150" />
             <p class="ml-5">Reduzir</p>
         </div>
     </div>

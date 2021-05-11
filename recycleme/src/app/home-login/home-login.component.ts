@@ -12,17 +12,17 @@ import { UsuarioService } from '../service/usuario.service';
 @Component({
   selector: 'app-home-login',
   templateUrl: './home-login.component.html',
-  styleUrls: ['./home-login.component.css']
+  styleUrls: ['./home-login.component.css'],
 })
 export class HomeLoginComponent implements OnInit {
-  idUser = environment.id
-  idUsuarioLogin = this.idUser
+  idUser = environment.id;
+  idUsuarioLogin = this.idUser;
 
-  usuarioLogin: UsuarioLogin = new UsuarioLogin()
-  usuario: Usuario = new Usuario()
-  listaUsuario: Usuario[]
+  usuarioLogin: UsuarioLogin = new UsuarioLogin();
+  usuario: Usuario = new Usuario();
+  listaUsuario: Usuario[];
 
-  produto: Produto= new Produto()
+  produto: Produto = new Produto();
   listaProduto: Produto[];
 
   idProduto: number;
@@ -32,27 +32,36 @@ export class HomeLoginComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private produtoService: ProdutoService
-
   ) {}
 
-  ngOnInit(){
-    if(environment.token == ''){
-      this.router.navigate(['/entrar'])
+  ngOnInit() {
+    if (environment.token == '') {
+      this.router.navigate(['/entrar']);
     }
-    this.findByIdUser()
-}
+    this.findByIdUser();
+  }
 
-  findByIdUser(){
-    this.authService.getByIdUser(this.idUsuarioLogin).subscribe((resp: Usuario)=>{
-      this.usuario= resp
+  findByIdUser() {
+    this.authService
+      .getByIdUser(this.idUsuarioLogin)
+      .subscribe((resp: Usuario) => {
+        this.usuario = resp;
+      });
+  }
+  showModal(id: number) {
+    this.idProduto = id;
+  }
+
+  apagar() {
+    this.produtoService.deleteProduto(this.idProduto).subscribe(() => {
+      alert('Produto apagado com sucesso');
+    });
+  }
+
+  atualizar(){
+    this.produtoService.putProduto(this.produto).subscribe((resp: Produto)=>{
+      this.produto = resp
+      alert('Produto atualizado com sucesso')
     })
   }
-  showModal(id: number){
-    this.idProduto = id
-  }
-  apagar(){
-    this.produtoService.deleteProduto(this.idProduto).subscribe(()=>{
-    alert('Produto apagado com sucesso')
-  })
-}
 }

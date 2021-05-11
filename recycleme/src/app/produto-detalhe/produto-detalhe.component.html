@@ -1,123 +1,123 @@
 <app-menu></app-menu>
 
 <div class="m-5 pl-5 pt-5">
-  <h2 class="pl-3 padrao-font-color">{{produto.nome}}</h2>
+    <h2 class="pl-3 padrao-font-color">{{produto.nome}}</h2>
 </div>
 <!-- coluna-imagem-contato -->
 <div class="row mt-5 mb-5">
-  <div class="col-1"></div>
-  <div class="col-6">
-    <img class="img-coluna" src="{{produto.foto}}">
-  </div>
-
-  <div  class="col4 padrao-font-color">
-    <span>Usuário:</span><span>{{produto.usuario.nome}}</span>
-    <div class="pt-3 pb-3">
-      <span>Região </span><span>{{produto.usuario.bairro}}</span>
+    <div class="col-1"></div>
+    <div class="col-6">
+        <img class="img-coluna" src="{{produto.foto}}">
     </div>
-      <span>Entrar em contato</span> 
-      <div class="pt-3 pl-4">
-        <a href=""><img class="img-contato hvr-grow" src="https://i.imgur.com/AeiK9eQ.png" alt="Imagem Whatsapp"></a>
-        
-      </div>
-        <div class="mt-4"> 
+
+    <div class="col4 padrao-font-color">
+        <span>Usuário:</span><span>{{produto.usuario.nome}}</span>
+        <div class="pt-3 pb-3">
+            <span>Região: </span><span>{{produto.usuario.bairro}}</span>
+        </div>
+        <span>Entrar em contato</span>
+        <div class="pt-3 pl-4">
+            <a href=""><img class="img-contato hvr-grow" src="https://i.imgur.com/AeiK9eQ.png" alt="Imagem Whatsapp"></a>
+
+        </div>
+        <div class="mt-4">
             <span>Avalie o comprador</span>
             <div class="pt-3 pl-4">
-                <a> <img class="  img-avaliacao hvr-grow" src="https://i.imgur.com/hw2DduK.png" alt="Icone de avaliacao "data-toggle="modal" data-target="#modalExemplo "></a>
-           </div>  
+                <a> <img class="  img-avaliacao hvr-grow" src="https://i.imgur.com/hw2DduK.png" alt="Icone de avaliacao " data-toggle="modal" data-target="#modalExemplo "></a>
+            </div>
         </div>
-<!-- /coluna-imagem-contato -->
-  </div>
+        <!-- /coluna-imagem-contato -->
+    </div>
 </div>
 <div class="col-6 d-flex justify-content-end mb-5 padrao-font-color">
-  <span class="valor mr-5"> R$ {{produto.preco}}</span>
-  <span> Qtd: {{produto.quantidade}} </span>
+    <span class="valor mr-5"> R$ {{produto.preco}}</span>
+    <span> Qtd: {{produto.quantidade}} </span>
 </div>
 <hr>
 <!--avaliacao-->
 <div class="m5 ml-5">
-  <h2 class="mt-5 ml-5 padrao-font-color">Avaliações</h2>
-  <h5 class="ml-5 padrao-font-color">O que as pessoas dizem sobre esse comprador</h5>
+    <h2 class="mt-5 ml-5 padrao-font-color">Avaliações</h2>
+    <h5 class="ml-5 padrao-font-color">O que as pessoas dizem sobre esse comprador</h5>
 </div>
 <div *ngFor="let avaliacao of listaAvaliacao">
-  <div class="pl-5 mr-5" *ngIf="avaliacao.usuario.id == produto.usuario.id">
-    <div class="avaliacao m-5 pl-5 pt-5">
-        <span>Usuario: Anônimo</span>
-      <div class="mt-4 d-flex padrao-font-color pb-4">
-        <div *ngIf="avaliacao.nota == 5">
-          <i class="fas fa-star star"></i>
-          <i class="fas fa-star star"></i>
-          <i class="fas fa-star star"></i>
-          <i class="fas fa-star star"></i>
-          <i class="fas fa-star star"></i>
-        </div>
-        <div *ngIf="avaliacao.nota == 4">
-          <i class="fas fa-star star"></i>
-          <i class="fas fa-star star"></i>
-          <i class="fas fa-star star"></i>
-          <i class="fas fa-star star"></i>
-          <i class="far fa-star star"></i>
+    <div class="pl-5 mr-5" *ngIf="avaliacao.usuario.id == produto.usuario.id">
+        <div class="avaliacao m-5 pl-5 pt-5">
+            <span>Usuario: Anônimo</span>
+            <div class="mt-4 d-flex padrao-font-color pb-4">
+                <div *ngIf="avaliacao.nota == 5">
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                </div>
+                <div *ngIf="avaliacao.nota == 4">
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="far fa-star star"></i>
 
+                </div>
+                <div *ngIf="avaliacao.nota == 3">
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="far fa-star star"></i>
+                    <i class="far fa-star star"></i>
+                </div>
+                <div *ngIf="avaliacao.nota == 2">
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="far fa-star star"></i>
+                    <i class="far fa-star star"></i>
+                    <i class="far fa-star star"></i>
+                </div>
+                <div *ngIf="avaliacao.nota == 1">
+                    <i class="fas fa-star star"></i>
+                    <i class="far fa-star star"></i>
+                    <i class="far fa-star star"></i>
+                    <i class="far fa-star star"></i>
+                    <i class="far fa-star star"></i>
+                </div>
+            </div>
+            <div class="pb-4">
+                <p>{{avaliacao.comentario}}</p>
+            </div>
         </div>
-        <div *ngIf="avaliacao.nota == 3">
-          <i class="fas fa-star star"></i>
-          <i class="fas fa-star star"></i>
-          <i class="fas fa-star star"></i>
-          <i class="far fa-star star"></i>
-          <i class="far fa-star star"></i>
-        </div>
-        <div *ngIf="avaliacao.nota == 2">
-          <i class="fas fa-star star"></i>
-          <i class="fas fa-star star"></i>
-          <i class="far fa-star star"></i>
-          <i class="far fa-star star"></i>
-          <i class="far fa-star star"></i>
-        </div>
-        <div *ngIf="avaliacao.nota == 1">
-          <i class="fas fa-star star"></i>
-          <i class="far fa-star star"></i>
-          <i class="far fa-star star"></i>
-          <i class="far fa-star star"></i>
-          <i class="far fa-star star"></i>
-        </div>  
-      </div>
-      <div class="pb-4">
-        <p>{{avaliacao.comentario}}</p>
-      </div>
-  </div>
-</div>
+    </div>
 </div>
 <!--/avaliacao-->
 
 <!-- Modal -->
 <div class="modal fade bd-example-modal-lg" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Deixe sua avalição sobre o produto!</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Deixe sua avalição sobre o produto!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
-      <div class="modal-body">
-        <div>
-          <label for="customRange2 text -center">Deixe sua nota</label>
-          <input [(ngModel)]='avaliacao.nota'  name="nota" type="range" class="custom-range" class="form-control" min="1" max="5" id="nota" >
-        </div>       
+            </div>
+            <div class="modal-body">
+                <div>
+                    <label for="customRange2 text -center">Deixe sua nota</label>
+                    <input [(ngModel)]='avaliacao.nota' name="nota" type="range" class="custom-range" class="form-control" min="1" max="5" id="nota">
+                </div>
 
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">Comentario</span>
-          </div>
-          <textarea  [(ngModel)]='avaliacao.comentario' id="comentario" name="comentario" placeholder="400 caracteres no maximo..." rows="4" class="form-control" aria-label="With textarea"></textarea>
-          </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn cancelar" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn enviarAvaliacao" data-dismiss="modal" (click)='cadastrar()'>Enviar Avaliação</button>
-      </div>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Comentario</span>
+                    </div>
+                    <textarea [(ngModel)]='avaliacao.comentario' id="comentario" name="comentario" placeholder="400 caracteres no maximo..." rows="4" class="form-control" aria-label="With textarea"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn cancelar" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn enviarAvaliacao" data-dismiss="modal" (click)='cadastrar()'>Enviar Avaliação</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 <!-- /Modal -->
 
