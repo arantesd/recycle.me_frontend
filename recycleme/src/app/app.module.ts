@@ -1,8 +1,8 @@
 import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http' 
-import { FormsModule } from '@angular/forms';
-import{HashLocationStrategy,LocationStrategy} from '@angular/common';
+import { FormsModule, ReactiveFormsModule, } from '@angular/forms';
+import { HashLocationStrategy,LocationStrategy} from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +23,7 @@ import { CategoriaComponent } from './categoria/categoria.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,12 +39,12 @@ import { CategoriaComponent } from './categoria/categoria.component';
     SobreNosComponent,
     DicasComponent,
     UsuarioAvaliacaoComponent,
-    CategoriaComponent
-    
+    CategoriaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
     FontAwesomeModule

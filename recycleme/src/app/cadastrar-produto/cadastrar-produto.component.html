@@ -12,40 +12,44 @@
     <form>
       <div class="form-group campo-form">
         <label for="formGroupExampleInput">Nome do Produto</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Insira o nome do Produto">
+        <input [(ngModel)]='produto.nome' type="text" class="form-control" name="produto" id="formGroupExampleInput" placeholder="Insira o nome do Produto">
       </div>
+      <div class="form-group campo-form">
+        <label for="formGroupExampleInput">Link da Foto do Produto</label>
+        <input [(ngModel)]='produto.foto' class="form-control" type="text" name="foto" id="foto" placeholder="Link da foto do produto">
+    </div>
       <div class="d-flex campo-form col-form">
-        <div class="pr-5">
+        <div class="pr-4">
           <label for="formGroupExampleInput2">Preço</label>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Digite o preço">
+          <input [(ngModel)]='produto.preco' type="number" class="form-control" name="preco" id="formGroupExampleInput2" placeholder="Digite o preço">
         </div>
-        <div class="pr-5">
+        <div class="pr-4">
           <label for="formGroupExampleInput2">Quantidade</label>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Digite a Quantidade">
+          <input [(ngModel)]='produto.quantidade' type="number" class="form-control" name="quantidade" id="formGroupExampleInput2" placeholder="Digite a Quantidade">
         </div>
         <div>
           <label for="formGroupExampleInput2">Peso</label>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Digite o preço">
+          <input [(ngModel)]='produto.peso' type="number" class="form-control" name="peso" id="formGroupExampleInput2" placeholder="Digite o preço">
         </div>
       </div>
       <div class="form-group campo-form pt-3 ">
         <label for="exampleFormControlSelect1">Categoria</label>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <select class="form-control" id="exampleFormControlSelect1" (change)='tipoCategoria($event)'>
           <option>Selecione uma opção</option>
-          <option>Metal</option>
-          <option>Plástico</option>
-          <option>Vidro</option>
-          <option>Papel</option>
-          <option>Madeira</option>
+          <option value='METAL'>Metal</option>
+          <option value='PLASTICO'>Plástico</option>
+          <option value='VIDRO'>Vidro</option>
+          <option value='PAPEL'>Papel</option>
+          <option value='MADEIRA'>Madeira</option>
         </select>
       </div>
       <div class="form-group campo-form">
         <label for="formGroupExampleInput">Tipo de Produto</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Escreva o tipo de produto">
+        <input [(ngModel)]='produto.tipo_prod' type="text" class="form-control" name="tipo_prod" id="formGroupExampleInput" placeholder="Escreva o tipo de produto">
       </div>
       <div class="d-flex justify-content-center mt-5">
         <button type="button" class="btn cancelar mr-4" routerLink='/detalhe'>Cancelar</button>
-        <button type="button" class="btn cadastrar" routerLink='/detalhe'>Cadastrar Produto</button>
+        <button type="button" class="btn cadastrar" (click)='registrar()'>Cadastrar Produto</button>
       </div>
     </form>
 <!-- /form -->
