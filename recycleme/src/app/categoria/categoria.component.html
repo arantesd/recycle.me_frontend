@@ -1,5 +1,5 @@
 <app-menu></app-menu>
-
+<!-- Filtro -->
 <div class="container container-fluid">
     <div class="row d-flex">
         <div class="col-md-3">
@@ -77,7 +77,8 @@
                 </div>
             </form>
         </div>
-
+<!-- /Filtro -->
+<!-- Lista de produtos -->
         <div class="col-md-9 pl-5">
             <table class="padrao-font-color table">
                 <tbody>
@@ -93,7 +94,9 @@
                         </td>
                         <td class="mais-detalhes">
                             <h4>R$ {{produto.preco}}</h4>
-                            <button class="btn-detalhes hvr-grow padrao-font-color" [routerLink]="['/detalhe',produto.id]">
+
+                            <button class="btn-detalhes hvr-grow padrao-font-color" [routerLink]="['/detalhe', produto.id]">
+
                 Mais detalhes
                 <i class="fa fa-arrow-right" aria-hidden="true"></i>
               </button>
@@ -121,4 +124,6 @@
         </div>
     </div>
 </div>
+</div>
+<!--/Lista de produtos -->
 <app-footer></app-footer>
