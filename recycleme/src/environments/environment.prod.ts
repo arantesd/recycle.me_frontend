@@ -3,7 +3,5 @@ export const environment = {
   token:'',
   nome:'',
   id:0,
-  usuario:'',
-  bairro:'',
-  quantidade:'',
+  usuario:''
 };

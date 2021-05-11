@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { Router } from '@angular/router';
 import { Produto } from '../model/Produto';
+=======
+>>>>>>> 134f2ba4d9fd20e7ca6db8555374a031ad090d13
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -10,8 +13,14 @@ import { AuthService } from '../service/auth.service';
 })
 export class CadastrarProdutoComponent implements OnInit {
 
+<<<<<<< HEAD
   produto: Produto = new Produto
   categoria: string
+=======
+  constructor(
+    public auth: AuthService
+  ) { }
+>>>>>>> 134f2ba4d9fd20e7ca6db8555374a031ad090d13
 
   constructor(
     private authService: AuthService,

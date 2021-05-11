@@ -1,14 +1,20 @@
 <app-menu></app-menu>
 <!-- titulo  -->
 <div class="pt-5 pl-5 mt-5 titulo">
-  <h2 class="">Meus Produtos</h2>
+    <h2 class="">Meus Produtos</h2>
 </div>
 <!-- /titulo-->
 <!-- caixa de produtos cadastrados -->
-  <div class="d-flex justify-content-center align-items-center m-5">
+<div class="d-flex justify-content-center align-items-center m-5">
     <span class="container-xl box-produtos d-flex justify-content-center align-items-center">
-      <h2>Você não possui produtos publicados</h2>
-    </span>
+  <div class="card" style="width: 18rem" *ngFor='let item of usuario.produto'>
+    <img class="card-img-top" alt="Imagem de capa do card" />
+    <div class="card-body">
+      <h5 class="card-title">{{item.nome}}</h5>
+      <a href="#" class="btn-editar">Editar Produto</a>
+    </div>
   </div>
+</span>
+</div>
 <!-- caixa de produtos cadastrados -->
-  <app-footer></app-footer>
+<app-footer></app-footer>

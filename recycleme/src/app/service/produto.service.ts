@@ -29,6 +29,10 @@ export class ProdutoService {
     return this.http.get<Produto>(`http://localhost:8080/api/v1/recycleMe/produto/produtoCategoria/${categoria}`)
   }
 
+  getByProdutoUsuario(usuario: number): Observable<Produto[]>{
+    return this.http.get<Produto[]>(`http://localhost:8080/api/v1/recycleMe/usuario/nomeUsuario/${usuario}`, this.token)
+  }
+  
   postProduto(produto: Produto): Observable<Produto>{
     return this.http.post<Produto>('http://localhost:8080/api/v1/recycleMe/produto', produto, this.token)
   }
