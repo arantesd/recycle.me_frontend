@@ -38,7 +38,7 @@ export class AuthService {
   }
 
   registrar(produto:Produto): Observable<Produto>{
-    return this.http.post<Produto>('http://localhost:8080/api/v1/recycleMe/produto', produto)
+    return this.http.post<Produto>('http://localhost:8080/api/v1/recycleMe/usuario/produto/novo/', produto)
   }
   
 }

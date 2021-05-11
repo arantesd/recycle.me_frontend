@@ -35,14 +35,10 @@ export class EntrarComponent implements OnInit {
       environment.id = this.usuarioLogin.id
       this.router.navigate(['/home', this.usuarioLogin])
 
-<<<<<<< HEAD
-      this.router.navigate(['/cadastrarProduto'])
-=======
       console.log(this.user.id)
       console.log(this.usuarioLogin.id)
       console.log(this.usuarioLogin.usuario)
       console.log(this.usuarioLogin.senha)
->>>>>>> 134f2ba4d9fd20e7ca6db8555374a031ad090d13
 
       
     },erro=> {

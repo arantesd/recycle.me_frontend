@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 import { Produto } from '../model/Produto';
-=======
->>>>>>> 134f2ba4d9fd20e7ca6db8555374a031ad090d13
+import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -13,14 +12,11 @@ import { AuthService } from '../service/auth.service';
 })
 export class CadastrarProdutoComponent implements OnInit {
 
-<<<<<<< HEAD
-  produto: Produto = new Produto
+  produto: Produto = new Produto()
+  usuario: Usuario = new Usuario() 
   categoria: string
-=======
-  constructor(
-    public auth: AuthService
-  ) { }
->>>>>>> 134f2ba4d9fd20e7ca6db8555374a031ad090d13
+  idUser = environment.id
+  idProduto: number
 
   constructor(
     private authService: AuthService,
@@ -38,6 +34,9 @@ export class CadastrarProdutoComponent implements OnInit {
 
 
   registrar(){
+    this.produto.id = this.idProduto
+    this.usuario.id = this.idUser
+    this.produto.usuario = this.usuario
     this.authService.registrar(this.produto).subscribe((resp: Produto) =>{
       this.produto = resp
       this.router.navigate(['/detalhe'])
