@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
+import { AuthService } from '../service/auth.service';
 import { ProdutoService } from '../service/produto.service';
 import { UsuarioService } from '../service/usuario.service';
 
@@ -13,20 +14,29 @@ import { UsuarioService } from '../service/usuario.service';
   styleUrls: ['./home-login.component.css']
 })
 export class HomeLoginComponent implements OnInit {
-
+  idUser = environment.id
   usuario: Usuario = new Usuario()
   listaUsuario: Usuario[]
+  produto: Produto= new Produto()
+  listaProduto: Produto[];
 
   constructor(
-    private usuarioService: UsuarioService,
-    private http: HttpClient,
+    private authService: AuthService,
     private router: Router,
-    private route: ActivatedRoute
+
   ) {}
 
   ngOnInit(){
     if(environment.token == ''){
       this.router.navigate(['/entrar'])
     }
+
+    this.findByIdUser()
+  }
+
+  findByIdUser(){
+    this.authService.getByIdUser(this.idUser).subscribe((resp: Usuario)=>{
+      this.usuario= resp
+    })
   }
 }

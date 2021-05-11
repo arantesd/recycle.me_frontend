@@ -18,12 +18,6 @@ export class UsuarioAvaliacaoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  findAllAvalicao(){
-    this.avaliacaoService.getAllAvaliacao().subscribe((resp: Avaliacao[]) =>{
-      this.listaAvaliacao = resp
-    })
-  }
-
   findAvaliacaoId(){
     this.avaliacaoService.getAvaliacaoId().subscribe((resp: Avaliacao) =>{
       this.avaliacao = resp
