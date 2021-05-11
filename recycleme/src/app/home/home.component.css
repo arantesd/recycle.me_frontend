@@ -33,3 +33,21 @@
     color: #41566B;
 }
 
+/*Responsividade celular */
+@media only screen and (min-width: 330px) and (max-width: 769px) {
+
+  .img-banner{
+    height: 200px;
+    margin-left: 120px;
+  }
+  .terras {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 0px 50px 0px !important;
+  }
+  .terras p{
+    margin: 0px !important;
+  }
+
+}

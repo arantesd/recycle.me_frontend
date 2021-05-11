@@ -73,6 +73,4 @@ export class ProdutoDetalheComponent implements OnInit {
       this.listaAvaliacao = resp
     })
   }
-  
-
 }
