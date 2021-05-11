@@ -19,18 +19,13 @@ export class UsuarioAvaliacaoService {
 
   getAllAvaliacao(): Observable<Avaliacao[]> {
     return this.http.get<Avaliacao[]>(
-      'http://localhost:8080/api/v1/recycleMe/avaliacao',
-      this.token
+      'http://localhost:8080/api/v1/recycleMe/avaliacao'
     );
   }
 
-  getAvaliacaoId(): Observable<Avaliacao> {
-    return this.http.get<Avaliacao>(
-      'http://localhost:8080/api/v1/recycleMe/avaliacao/{id}',
-      this.token
-    );
+  getAvaliacaoId(): Observable<Avaliacao>{
+    return this.http.get<Avaliacao>('http://localhost:8080/api/v1/recycleMe/avaliacao/{id}');
   }
-
   
   getAvaliacao(): Observable<Avaliacao[]> {
     return this.http.get<Avaliacao[]>(

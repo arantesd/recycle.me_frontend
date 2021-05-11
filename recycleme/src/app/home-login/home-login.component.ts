@@ -39,20 +39,20 @@ export class HomeLoginComponent implements OnInit {
     if(environment.token == ''){
       this.router.navigate(['/entrar'])
     }
-
     this.findByIdUser()
-    
-  }
+}
 
   findByIdUser(){
     this.authService.getByIdUser(this.idUsuarioLogin).subscribe((resp: Usuario)=>{
       this.usuario= resp
     })
   }
-
+  showModal(id: number){
+    this.idProduto = id
+  }
   apagar(){
     this.produtoService.deleteProduto(this.idProduto).subscribe(()=>{
-      alert('Produto apagado com ucesso')
-    })
-  }
+    alert('Produto apagado com sucesso')
+  })
+}
 }

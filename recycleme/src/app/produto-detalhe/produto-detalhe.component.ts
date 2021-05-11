@@ -7,6 +7,7 @@ import { Usuario } from '../model/Usuario';
 import { UsuarioLogin } from '../model/UsuarioLogin';
 import { ProdutoService } from '../service/produto.service';
 import { UsuarioAvaliacaoService } from '../service/usuario-avaliacao.service';
+import { UsuarioService } from '../service/usuario.service';
 
 @Component({
   selector: 'app-produto-detalhe',
@@ -19,20 +20,23 @@ export class ProdutoDetalheComponent implements OnInit {
   listaAvaliacao: Avaliacao[];
   produto: Produto= new Produto;
   usuario: Usuario = new Usuario();
+  listaUsuario: Usuario[]
   userLogin: UsuarioLogin = new UsuarioLogin();
   idUser = environment.id
   IdAvaliacao : number;
-
+ 
 
   constructor(
     private avaliacaoService: UsuarioAvaliacaoService,
     private produtoService: ProdutoService,
+    private usuarioService: UsuarioService,
     private route : ActivatedRoute
   ) { }
 
   ngOnInit(){
     let id = this.route.snapshot.params['id']
     this.findByIdProduto(id)
+    this.findAllAvalicao()
   }
 
   cadastrar() {
@@ -55,12 +59,18 @@ export class ProdutoDetalheComponent implements OnInit {
     
   }
 
+  findAllUsuario(){
+    this.usuarioService.getAllUsuario().subscribe((resp: Usuario[])=>{
+      this.listaUsuario = resp
+    })
+  }
+
   findAllAvalicao(){
     this.avaliacaoService.getAllAvaliacao().subscribe((resp: Avaliacao[]) =>{
       this.listaAvaliacao = resp
     })
   }
-
+/*
   findAvaliacaoMaior(){
     this.avaliacaoService.getAvaliacaoMaior().subscribe((resp: Avaliacao[]) => {
       this.listaAvaliacao = resp
@@ -73,4 +83,5 @@ export class ProdutoDetalheComponent implements OnInit {
       this.listaAvaliacao = resp
     })
   }
+*/
 }
