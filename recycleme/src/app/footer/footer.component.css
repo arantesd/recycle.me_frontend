@@ -12,12 +12,23 @@ a{
 .footer-lista span{
   font-weight: bold;
 }
-.abacaxi{
+.copy{
   background-color: rgba(83, 179, 132, 0.23);
-  width: 100%;
+  width: 100vw;
   height: 50px;
 }
 .logo{
   width: 69px;
   height: 116px;
+  margin-left: 40px;
+}
+@media only screen and (max-width: 900px) {
+  .logo{
+    width: 30px;
+    height: 60px;
+  }
+  .d-flex{
+    flex-direction: column;
+    padding-left: 5%;
+  }
 }

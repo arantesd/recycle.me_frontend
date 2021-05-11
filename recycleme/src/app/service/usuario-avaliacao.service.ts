@@ -47,8 +47,7 @@ export class UsuarioAvaliacaoService {
 
   postAvaliacao(avaliacao: Avaliacao): Observable<Avaliacao> {
     return this.http.post<Avaliacao>(
-      'http://localhost:8080/api/v1/recycleMe/usuario/avaliacao/nova/{id_usuario}',
-      avaliacao,
+      "http://localhost:8080/api/v1/recycleMe/usuario/avaliacao",avaliacao ,
       this.token
     );
   }

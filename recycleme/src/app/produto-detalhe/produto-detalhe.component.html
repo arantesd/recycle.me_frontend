@@ -74,25 +74,18 @@
       <div class="modal-body">
         <div>
           <label for="customRange2 text -center">Deixe sua nota</label>
-          <input type="range" class="custom-range" min="0" max="5" id="avaliacao">
+          <input [(ngModel)]="avaliacoes.avaliacao" name="avalicao" id="avaliacao" type="text" min="0" max="5">
         </div>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Seu Nome</span>
-          </div>
-          <input type="text" class="form-control" placeholder="..." aria-label="Username" aria-describedby="basic-addon1">
-        </div>
-
         <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text">Comentario</span>
           </div>
-          <textarea placeholder="400 caracteres no maximo..." rows="4" class="form-control" aria-label="With textarea"></textarea>
+          <textarea [(ngModel)]='avaliacoes.comentario' id="comentario" name="comentario" placeholder="400 caracteres no maximo..." rows="4" class="form-control" aria-label="With textarea"></textarea>
           </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn cancelar" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn enviarAvaliacao">Enviar Avaliação</button>
+        <button type="button" class="btn enviarAvaliacao" (click)="postarAvaliacao()">Enviar Avaliação</button>
       </div>
     </div>
   </div>
