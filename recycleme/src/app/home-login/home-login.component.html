@@ -11,10 +11,78 @@
     <img class="card-img-top" alt="Imagem de capa do card" />
     <div class="card-body">
       <h5 class="card-title">{{item.nome}}</h5>
-      <a href="#" class="btn-editar">Editar Produto</a>
+      
+   
+        
+        <button class="btn-editar" data-toggle="modal" data-target="#exampleModalPreview">Editar Produto</button>
+   
     </div>
   </div>
 </span>
 </div>
-<!-- caixa de produtos cadastrados -->
+
+
+
+
+<!-- Modal Editar Produto -->
+<div class="modal fade right" id="exampleModalPreview" tabindex="-1" role="dialog" aria-labelledby="exampleModalPreviewLabel" aria-hidden="true">
+    <div class="modal-dialog-full-width modal-dialog momodel modal-fluid" role="document">
+        <div class="modal-content-full-width modal-content">
+            <div class="modal-header-full-width modal-header text-center">
+                <div class="pl-5 pt-5 mt-5 titulo">
+                    <h2>Editar produto</h2>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span style="font-size: 1.3em" aria-hidden="true">&times;</span>
+      </button>
+            </div>
+            <div class="modal-body">
+                <div class="row d-flex align-items-center mt-3">
+                    <div class="col-1"></div>
+                    <div class="col-6">
+                        <form>
+                            <div class="form-group campo-form">
+                                <label for="formGroupExampleInput">Nome do Produto</label>
+                                <input name="nome" type="text" class="form-control" id="formGroupExampleInput" placeholder="Insira o nome do Produto" />
+                            </div>
+                            <div class="segunda-linha campo-form">
+                                <div class="pr-5">
+                                    <label for="preco">Preço</label>
+                                    <input name="preco" type="number" class="form-control" id="preco" placeholder="Digite o preço" />
+                                </div>
+                                <div class="pr-5">
+                                    <label for="quantidade">Quantidade</label>
+                                    <input name="quantidade" type="number" class="form-control" id="quantidade" min="1" max="150" placeholder="Digite a Quantidade" />
+                                </div>
+                                <div>
+                                    <label for="peso">Peso</label>
+                                    <input name="peso" type="number" class="form-control" id="peso" placeholder="Digite o preço" />
+                                </div>
+                            </div>
+
+                            <div class="form-group campo-form mt-3">
+                                <label for="formGroupExampleInput">Tipo de Produto</label>
+                                <input name="tipo_prod" type="text" class="form-control" id="formGroupExampleInput" placeholder="Escreva o tipo de produto" />
+                            </div>
+                            <div class="d-flex justify-content-center mt-5">
+                                <button type="button" class="btn-danger" (click)='apagar()'>
+                Apagar Produto
+              </button>
+                                <button type="button" class="btn-editar" routerLink="/homeLogin">
+                Atualizar Produto
+              </button>
+                            </div>
+                        </form>
+                        <!-- /form -->
+
+                        <!-- coluna-Imagem -->
+                    </div>
+                    <div class="col-4">
+                        <img src="https://i.imgur.com/YWbqv7H.png" alt="Desenho de pessoas coletando recicláveis" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <app-footer></app-footer>
