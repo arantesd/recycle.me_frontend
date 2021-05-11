@@ -18,7 +18,7 @@
         <button *ngIf="!auth.logado()" id="botaoCHOME" type="button" class="btn" routerLink="/cadastrar">
           Crie sua Conta
         </button> 
-        <span *ngIf="auth.logado()" id="botaoCHOME" type="button" class="btn" [routerLink]="['/homeLogin', usuario.id]">
+        <span *ngIf="auth.logado()" id="botaoCHOME" type="button" class="btn" routerLink="/homeLogin">
             Meus produtos 
         </span>
             </div>

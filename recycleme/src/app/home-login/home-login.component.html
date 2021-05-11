@@ -8,13 +8,13 @@
 <div class="d-flex justify-content-center align-items-center m-5">
     <span class="container-xl box-produtos d-flex justify-content-center align-items-center">
   <div class="card" style="width: 18rem" *ngFor='let item of usuario.produto'>
-    <img class="card-img-top" alt="Imagem de capa do card" />
+    <img class="card-img-top" src="{{item.foto}}" alt="Imagem de capa do card" />
     <div class="card-body">
       <h5 class="card-title">{{item.nome}}</h5>
       
    
         
-        <button class="btn-editar" data-toggle="modal" data-target="#exampleModalPreview">Editar Produto</button>
+        <button class="btn-editar" data-toggle="modal" data-target="#exampleModalPreview" (click)="showModal(item.id)">Editar Produto</button>
    
     </div>
   </div>
