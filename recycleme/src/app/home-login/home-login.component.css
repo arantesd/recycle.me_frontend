@@ -1,19 +1,73 @@
 h2 {
-  color: rgba(65, 86, 107, 1);
+    color: rgba(65, 86, 107, 1);
+    padding-right: 40px;
 }
-.box-produtos {
-  border: solid 1px;
-  height: 688px;
-}
-@media only screen and (max-height: 766px) {
-  .titulo {
-    margin-left: 62px;
-  }
-}
-/* Adaptação para tela Full Hd */
 
-@media only screen and (min-height: 900px) {
-  .titulo {
-    margin-left: 339px;
-  }
+.box-produtos {
+    border: solid 1px;
+    height: 688px;
+}
+
+.card {
+    display: flex;
+    justify-content: left;
+}
+
+.card-img-top {
+    width: 237px;
+    height: 196px;
+}
+
+.btn-editar {
+    background: rgba(83, 179, 132, 0.23);
+    border-radius: 136px;
+    padding: 10px;
+    color: rgba(65, 86, 107, 1);
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+@media only screen and (max-height: 766px) {
+    .titulo {
+        margin-left: 62px;
+    }
+}
+
+.modal-dialog-full-width {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+}
+
+.modal-content-full-width {
+    height: auto !important;
+    min-height: 100% !important;
+    border-radius: 0 !important;
+}
+
+
+/* coluna imagem */
+
+img {
+    width: 480px;
+    height: 480px;
+}
+
+
+/* form */
+
+.segunda-linha {
+    display: flex;
+    align-items: stretch;
+}
+
+input {
+    border-radius: 10px;
+}
+
+select {
+    border-radius: 10px;
 }
