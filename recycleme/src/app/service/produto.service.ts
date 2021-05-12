@@ -32,12 +32,14 @@ export class ProdutoService {
   getByProdutoUsuario(usuario: number): Observable<Produto[]>{
     return this.http.get<Produto[]>(`http://localhost:8080/api/v1/recycleMe/usuario/nomeUsuario/${usuario}`, this.token)
   }
-  
-  postProduto(produto: Produto): Observable<Produto>{
-    return this.http.post<Produto>('http://localhost:8080/api/v1/recycleMe/produto', produto, this.token)
-  }
 
   deleteProduto(id: number){
     return this.http.delete(`http://localhost:8080/api/v1/recycleMe/produto/${id}`, this.token)
   }
+
+  registrar(produto:Produto, idUsuario:number): Observable<Produto>{
+    return this.http.post<Produto>(`http://localhost:8080/api/v1/recycleMe/usuario/produto/novo/${idUsuario}`, produto)
+  }
+
+  
 }
