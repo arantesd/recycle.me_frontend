@@ -10,15 +10,15 @@
                     Anuncie compras de recicláveis, entre em contato com cooperativas e pessoas interessadas, aprenda como reciclar.
                 </h6>
                 <h6 class="font-weight-bold mb-4">
-                    <span *ngIf="!auth.logado()">Clique no botão abaixo e crie sua conta! </span>
-                    <span *ngIf="auth.logado()">Clique no botão abaixo para ver seus produtos!</span>
+                    <span class="text-center" *ngIf="!auth.logado()">Clique no botão abaixo e crie sua conta! </span>
+                    <span class="text-center" *ngIf="auth.logado()">Clique no botão abaixo para ver seus produtos!</span>
                 </h6>
 
 
-        <button *ngIf="!auth.logado()" id="botaoCHOME" type="button" class="btn" routerLink="/cadastrar">
+                <button *ngIf="!auth.logado()" id="botaoCHOME" type="button" class="btn" routerLink="/cadastrar">
           Crie sua Conta
-        </button> 
-        <span *ngIf="auth.logado()" id="botaoCHOME" type="button" class="btn" routerLink="/homeLogin">
+        </button>
+                <span *ngIf="auth.logado()" id="botaoCHOME" type="button" class="btn" routerLink="/homeLogin">
             Meus produtos 
         </span>
             </div>
@@ -34,17 +34,17 @@
 <!-- cards -->
 
 <div id="cardsHome" class="container d-flex justify-content-center mt-4 mb-5 pd-5">
-    <div class="row">
+    <div class="row cardsHome">
         <div class="terras col-md-3 mr-4">
-            <img src="../../assets/img/mundinho.png" alt=" logo de um mundo pequeno " height="150">
+            <img src="../../assets/img/mundinho.png" alt="logo de um mundo pequeno" height="150">
             <p class="ml-5">Reciclar</p>
         </div>
         <div class="terras col-md-3 mr-4">
-            <img src="../../assets/img/mundinho2.png" alt="mundinho" height="150" />
+            <img src="../../assets/img/mundinho2.png" alt="logo de um mundo pequeno" height="150" />
             <p class="ml-5">Reutilizar</p>
         </div>
         <div class="terras col-md-3">
-            <img src="../../assets/img/mundinho3.png" alt="mundinho" height="150" />
+            <img src="../../assets/img/mundinho3.png" alt="logo de um mundo pequeno" height="150" />
             <p class="ml-5">Reduzir</p>
         </div>
     </div>
@@ -61,7 +61,7 @@
             <div class="carousel-item active">
                 <div class="card-deck">
                     <div class="card">
-                        <img class="card-img-top" src="../../assets/img/imagemMadeira.jpg" alt="Imagem de capa do card" />
+                        <img class="card-img-top" src="../../assets/img/imagemMadeira.jpg" alt="Madeira" />
                         <div class="card-body">
                             <h5 class="card-title">Madeira</h5>
                             <p class="card-text">
@@ -70,7 +70,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <img class="card-img-top" src="../../assets/img/imagemMetal.jpg" alt="Imagem de capa do card" />
+                        <img class="card-img-top" src="../../assets/img/imagemMetal.jpg" alt="Metais" />
                         <div class="card-body">
                             <h5 class="card-title">Metais</h5>
                             <p class="card-text">
@@ -79,7 +79,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <img class="card-img-top" src="../../assets/img/imagemVidro.jpg" alt="Imagem de capa do card" />
+                        <img class="card-img-top" src="../../assets/img/imagemVidro.jpg" alt="Vidro" />
                         <div class="card-body">
                             <h5 class="card-title">Vidro</h5>
                             <p class="card-text">
@@ -92,7 +92,7 @@
             <div class="carousel-item">
                 <div class="card-deck">
                     <div class="card">
-                        <img class="card-img-top" src="../../assets/img/imagemPlastico.jpg" alt="Imagem de capa do card" />
+                        <img class="card-img-top" src="../../assets/img/imagemPlastico.jpg" alt="Plástico" />
                         <div class="card-body">
                             <h5 class="card-title">Plástico</h5>
                             <p class="card-text">
@@ -101,7 +101,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <img class="card-img-top" src="../../assets/img/imagemPapel.jpg" alt="Imagem de capa do card" />
+                        <img class="card-img-top" src="../../assets/img/imagemPapel.jpg" alt="Papel" />
                         <div class="card-body">
                             <h5 class="card-title">Papel</h5>
                             <p class="card-text">

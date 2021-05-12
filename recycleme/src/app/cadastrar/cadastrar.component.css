@@ -1,47 +1,62 @@
+/* formulário */
 
-  /* formulário */
-  .telaTotal{
+.telaTotal {
     width: 1920px;
     height: 1080px;
-  }
+}
 
-  input{
+span {
+    font-size: 12px;
+    color: #41566B;
+}
+
+input {
     border-radius: 10px;
-  }
+}
 
-  .enviar{
+.enviar {
     background-color: rgba(36, 191, 60, 0.62)
-   
-  }
+}
 
-  .cancelar{
+.cancelar {
     color: white;
     background-color: #fa8376;
-  }
+}
 
-  
+#img-bg {
+    background: url('https://raw.githubusercontent.com/ySodias/recycle.me_frontend/develop/recycleme/src/assets/img/TelaLoginProjetoAGORAVAI.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-width: auto;
+    min-height: 1080px;
+    height: 100%;
+}
 
-  @media only screen and (max-height: 766px) {
-    .col-form input{
-      width: 275px;
-      
+@media only screen and (max-height: 766px) {
+    .col-form input {
+        width: 275px;
     }
-  }
+}
 
-  /* Mudanças para Tela Full Hd  */
-  @media only screen and (min-height: 900px) {
-    .titulo{
-      margin-left: 110px;
-    }
-    .col-form input{
-      width: 283px;
-    }
-  }
 
-  /* font frase */
-  .fontf{
+/* Mudanças para Tela Full Hd  */
+
+@media only screen and (min-height: 900px) {
+    .titulo {
+        margin-left: 110px;
+    }
+    .col-form input {
+        width: 283px;
+    }
+}
+
+
+/* font frase */
+
+.fontf {
     font-size: 35pt;
     color: #41566B;
     line-height: 30px
-    
-  }
+}
