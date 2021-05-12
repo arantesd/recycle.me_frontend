@@ -37,7 +37,7 @@ export class EntrarComponent implements OnInit {
       console.log(this.usuarioLogin.id)
       console.log(this.usuarioLogin.usuario)
       console.log(this.usuarioLogin.senha)
-      this.router.navigate(['/cadastrarProduto', this.usuarioLogin])
+      this.router.navigate(['/home', this.usuarioLogin])
 
       
 
