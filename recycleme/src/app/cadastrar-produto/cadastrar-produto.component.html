@@ -36,11 +36,7 @@
         <label for="exampleFormControlSelect1">Categoria</label>
         <select class="form-control" id="exampleFormControlSelect1" (change)='tipoCategoria($event)'>
           <option>Selecione uma opção</option>
-          <option value='METAL'>Metal</option>
-          <option value='PLASTICO'>Plástico</option>
-          <option value='VIDRO'>Vidro</option>
-          <option value='PAPEL'>Papel</option>
-          <option value='MADEIRA'>Madeira</option>
+          <option *ngFor="let categoria of categorias" [ngValue]="categoria">{{categoria}}</option>
         </select>
       </div>
       <div class="form-group campo-form">

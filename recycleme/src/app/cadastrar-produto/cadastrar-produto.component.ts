@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
   selector: 'app-cadastrar-produto',
@@ -16,10 +17,10 @@ export class CadastrarProdutoComponent implements OnInit {
   usuario: Usuario = new Usuario() 
   categoria: string
   idUser = environment.id
-  idProduto: number
+  categorias: string[] = ['METAL','PAPEL','PLASTICO','VIDRO','MADEIRA']
 
   constructor(
-    private authService: AuthService,
+    private produtoService: ProdutoService,
     private router: Router
 
   ) { }
@@ -30,14 +31,16 @@ export class CadastrarProdutoComponent implements OnInit {
 
   tipoCategoria(event: any){
     this.categoria = event.target.value 
+    console.log(this.categoria)
   }
 
 
   registrar(){
-    this.produto.id = this.idProduto
-    this.usuario.id = this.idUser
-    this.produto.usuario = this.usuario
-    this.authService.registrar(this.produto).subscribe((resp: Produto) =>{
+
+    this.produto.categoria = this.categoria
+    console.log(this.idUser)
+    console.log(this.produto)
+    this.produtoService.registrar(this.produto, this.idUser).subscribe((resp: Produto) =>{
       this.produto = resp
       this.router.navigate(['/detalhe'])
       alert('Produto registrado com sucesso!')
