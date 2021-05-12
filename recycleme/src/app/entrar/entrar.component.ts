@@ -33,15 +33,7 @@ export class EntrarComponent implements OnInit {
       environment.token = this.usuarioLogin.token
       environment.usuario = this.usuarioLogin.usuario
       environment.id = this.usuarioLogin.id
-      console.log(this.user.id)
-      console.log(this.usuarioLogin.id)
-      console.log(this.usuarioLogin.usuario)
-      console.log(this.usuarioLogin.senha)
-      this.router.navigate(['/home', this.usuarioLogin])
-
-      
-
-      
+      this.router.navigate(['/home', this.usuarioLogin])      
     },erro=> {
       if(erro.status == 500){
         alert('Usuario ou Senha incorreta!!')

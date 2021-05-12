@@ -170,3 +170,12 @@ input[type="checkbox"] {
         margin: 20px 0 20px 0px;
     }
 }
+
+.aplicar{
+    background-color: rgba(36, 191, 60, 0.62)
+}
+
+.cancelar{
+    color: white;
+    background-color: #fa8376;
+}
