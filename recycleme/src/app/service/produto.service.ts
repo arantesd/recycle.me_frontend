@@ -40,8 +40,9 @@ export class ProdutoService {
   registrar(produto:Produto, idUsuario:number): Observable<Produto>{
     return this.http.post<Produto>(`http://localhost:8080/api/v1/recycleMe/usuario/produto/novo/${idUsuario}`, produto)
   }
+
   putProduto(produto: Produto): Observable<Produto>{
-    return this.http.put<Produto>('http://localhost:8080/api/v1/recycleMe/produto', produto)
+    return this.http.put<Produto>('http://localhost:8080/api/v1/recycleMe/produto', produto, this.token)
   }
   
 }
