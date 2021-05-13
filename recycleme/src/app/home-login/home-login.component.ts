@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
@@ -7,7 +6,6 @@ import { Usuario } from '../model/Usuario';
 import { UsuarioLogin } from '../model/UsuarioLogin';
 import { AuthService } from '../service/auth.service';
 import { ProdutoService } from '../service/produto.service';
-import { UsuarioService } from '../service/usuario.service';
 
 @Component({
   selector: 'app-home-login',
@@ -26,6 +24,8 @@ export class HomeLoginComponent implements OnInit {
   listaProduto: Produto[];
 
   idProduto: number;
+  categoria: string;
+  categorias: string[] = ['METAL', 'PAPEL', 'PLASTICO', 'VIDRO', 'MADEIRA'];
 
   constructor(
     private authService: AuthService,
@@ -52,17 +52,15 @@ export class HomeLoginComponent implements OnInit {
     this.findByProdutoId()
     console.log(this.produto)
   }
-
-  findByProdutoId(){
-    this.produtoService.getByIdProduto(this.idProduto).subscribe((resp: Produto)=>{
-      this.produto = resp
-    })
-  }
-
   apagar() {
     this.produtoService.deleteProduto(this.idProduto).subscribe(() => {
       alert('Produto apagado com sucesso');
+      this.findByIdUser();
     });
+  }
+
+  tipoCategoria(event: any) {
+    this.categoria = event.target.value;
   }
 
   atualizar(){
@@ -74,4 +72,11 @@ export class HomeLoginComponent implements OnInit {
       this.findByIdUser()
     })
   }
+
+  findByProdutoId(){
+    this.produtoService.getByIdProduto(this.idProduto).subscribe((resp: Produto)=>{
+      this.produto = resp
+    })
+  }
+
 }

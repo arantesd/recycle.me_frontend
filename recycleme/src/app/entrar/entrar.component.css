@@ -7,6 +7,22 @@
  .entrar {
      background-color: #BBEAD2
  }
+ 
+ .entrar:hover {
+     background-color: rgba(83, 179, 132, 0.5);
+     transition: 0.5s;
+ }
+ 
+ .btn-danger {
+     border: none;
+     padding: 6px 12px;
+     margin-right: 20px;
+     border-radius: .25rem;
+ }
+ 
+ .btn-danger {
+     transition: 0.5s;
+ }
  /* font frase */
  
  .fontf {
