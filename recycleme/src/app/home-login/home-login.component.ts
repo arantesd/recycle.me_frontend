@@ -39,17 +39,24 @@ export class HomeLoginComponent implements OnInit {
       this.router.navigate(['/entrar']);
     }
     this.findByIdUser();
+  
   }
 
   findByIdUser() {
-    this.authService
-      .getByIdUser(this.idUsuarioLogin)
-      .subscribe((resp: Usuario) => {
+    this.authService.getByIdUser(this.idUsuarioLogin).subscribe((resp: Usuario) => {
         this.usuario = resp;
       });
   }
   showModal(id: number) {
     this.idProduto = id;
+    this.findByProdutoId()
+    console.log(this.produto)
+  }
+
+  findByProdutoId(){
+    this.produtoService.getByIdProduto(this.idProduto).subscribe((resp: Produto)=>{
+      this.produto = resp
+    })
   }
 
   apagar() {
@@ -59,9 +66,12 @@ export class HomeLoginComponent implements OnInit {
   }
 
   atualizar(){
+    console.log(this.produto)
     this.produtoService.putProduto(this.produto).subscribe((resp: Produto)=>{
+      console.log(this.produto)
       this.produto = resp
       alert('Produto atualizado com sucesso')
+      this.findByIdUser()
     })
   }
 }
