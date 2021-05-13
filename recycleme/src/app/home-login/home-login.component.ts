@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
@@ -7,7 +6,6 @@ import { Usuario } from '../model/Usuario';
 import { UsuarioLogin } from '../model/UsuarioLogin';
 import { AuthService } from '../service/auth.service';
 import { ProdutoService } from '../service/produto.service';
-import { UsuarioService } from '../service/usuario.service';
 
 @Component({
   selector: 'app-home-login',
@@ -41,12 +39,11 @@ export class HomeLoginComponent implements OnInit {
       this.router.navigate(['/entrar']);
     }
     this.findByIdUser();
+  
   }
 
   findByIdUser() {
-    this.authService
-      .getByIdUser(this.idUsuarioLogin)
-      .subscribe((resp: Usuario) => {
+    this.authService.getByIdUser(this.idUsuarioLogin).subscribe((resp: Usuario) => {
         this.usuario = resp;
       });
   }

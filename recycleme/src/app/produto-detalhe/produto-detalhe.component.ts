@@ -25,13 +25,16 @@ export class ProdutoDetalheComponent implements OnInit {
   idUser = environment.id
   IdAvaliacao : number;
  
+  changeText: boolean
 
   constructor(
     private avaliacaoService: UsuarioAvaliacaoService,
     private produtoService: ProdutoService,
     private usuarioService: UsuarioService,
-    private route : ActivatedRoute
-  ) { }
+    private route : ActivatedRoute,
+  ) { 
+    this.changeText = false
+  }
 
   ngOnInit(){
     let id = this.route.snapshot.params['id']
