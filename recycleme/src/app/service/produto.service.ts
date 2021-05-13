@@ -25,8 +25,8 @@ export class ProdutoService {
     return this.http.get<Produto>(`http://localhost:8080/api/v1/recycleMe/produto/${id}`, this.token)
   }
 
-  getByCategoria(categoria: string): Observable<Produto>{
-    return this.http.get<Produto>(`http://localhost:8080/api/v1/recycleMe/produto/produtoCategoria/${categoria}`)
+  getByCategoria(categoria: string): Observable<Produto[]>{
+    return this.http.get<Produto[]>(`http://localhost:8080/api/v1/recycleMe/produto/produtoCategoria/${categoria}`)
   }
 
   getByProdutoUsuario(usuario: number): Observable<Produto[]>{
