@@ -1,8 +1,3 @@
-.footer-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
 
 .footer-div {
     margin-top: 60px;
@@ -11,6 +6,7 @@
 .footer-lista {
     list-style: none;
     color: #41566b;
+    
 }
 
 .fab {
