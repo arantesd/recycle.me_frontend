@@ -18,9 +18,18 @@
     margin-bottom: 20px;
 }
 
+h6>span {
+    font-weight: bold;
+}
+
 #botaoCHOME {
     color: #41566B;
     background-color: rgba(36, 191, 60, 0.62);
+}
+
+#botaoCHOME:hover {
+    background-color: rgba(36, 191, 60, 1);
+    transition: 0.5s
 }
 
 #carousel h3 {
@@ -30,8 +39,16 @@
     color: #41566B;
 }
 
+h5 {
+    font-weight: bold;
+}
+
 .cardsHome {
     margin-top: 40px;
+}
+
+.card {
+    height: 558px;
 }
 
 #cardsHome {
@@ -40,8 +57,23 @@
     color: #41566B;
 }
 
-.card {
-    height: 415px;
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 304px;
+    color: #41566B;
+}
+
+cite {
+    margin-top: 10px;
+    text-align: right;
+}
+
+cite a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #41566B
 }
 
 

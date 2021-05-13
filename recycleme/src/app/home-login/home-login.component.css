@@ -39,6 +39,16 @@ h2 {
     transition: 0.3s;
 }
 
+.btn-success {
+    border: none;
+    border-radius: 136px;
+    padding: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
 .btn-editar {
     background: rgba(83, 179, 132, 0.23);
     border: none;

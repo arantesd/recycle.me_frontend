@@ -6,15 +6,18 @@
 <!-- /titulo-->
 <!-- caixa de produtos cadastrados -->
 <div class="justify-content-center align-items-center m-5">
-    <span class=" produtos container-xl box-produtos">
-  <div class="card" style="width: 18rem" *ngFor='let item of usuario.produto'>
-    <img class="card-img-top" src="{{item.foto}}" alt="Imagem de capa do card" />
-    <div class="card-body">
-      <h5 class="card-title">{{item.nome}}</h5>
-        <button class="btn-editar" data-toggle="modal" data-target="#exampleModalPreview" (click)="showModal(item.id)">Editar Produto</button>
-    </div>
-  </div>
-</span>
+    <span class="produtos container-xl box-produtos">
+        <div class="card" style="width: 18rem" *ngFor="let item of usuario.produto">
+            <img class="card-img-top" src="{{ item.foto }}" alt="Imagem de capa do card" />
+            <div class="card-body">
+                <h5 class="card-title">{{ item.nome }}</h5>
+                <button class="btn-editar" data-toggle="modal" data-target="#exampleModalPreview"
+                    (click)="showModal(item.id)">
+                    Editar Produto
+                </button>
+            </div>
+        </div>
+    </span>
 </div>
 
 <!-- Modal Editar Produto -->
@@ -26,53 +29,59 @@
                     <h2>Editar produto</h2>
                 </div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span style="font-size: 1.3em" aria-hidden="true">&times;</span>
-      </button>
+                    <span style="font-size: 1.3em" aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
                 <div class="row d-flex align-items-center mt-3">
-                    <div class="col-1"></div>
                     <div class="col-6">
                         <form>
                             <div class="form-group campo-form">
-                                <label for="formGroupExampleInput">Nome do Produto</label>
-                                <input [(ngModel)]='produto.nome' name="nome" type="text" class="form-control" id="formGroupExampleInput" placeholder="Insira o nome do Produto" />
+                                <label for="formGroupExampleInput">Nome do Produto <span class="help-block">(Obrigatório)</span> </label>
+                                <input [(ngModel)]="produto.nome" type="text" class="form-control" name="produto" id="formGroupExampleInput" placeholder="Insira o nome do Produto" />
+
                             </div>
                             <div class="form-group campo-form">
-                                <label for="formGroupExampleInput">Link da Foto do Produto</label>
-                                <input [(ngModel)]='produto.foto' class="form-control" type="text" name="foto" id="foto" placeholder="Link da foto do produto">
+                                <label for="formGroupExampleInput">Link da Foto do Produto<span class="help-block">(Opcional)</span></label>
+                                <input [(ngModel)]="produto.foto" class="form-control" type="text" name="foto" id="foto" placeholder="Link da foto do produto" />
                             </div>
-                            <div class="segunda-linha campo-form">
-                                <div class="pr-5">
-                                    <label for="preco">Preço</label>
-                                    <input [(ngModel)]='produto.preco' name="preco" type="number" class="form-control" id="preco" placeholder="Digite o preço" />
+                            <div class="d-flex campo-form col-form">
+                                <div class="pr-4">
+                                    <label for="formGroupExampleInput2">Preço <span class="help-block">(Obrigatório)</span> </label>
+                                    <input [(ngModel)]="produto.preco" type="number" class="form-control" name="preco" id="formGroupExampleInput2" placeholder="Digite o preço" />
                                 </div>
-                                <div class="pr-5">
-                                    <label for="quantidade">Quantidade</label>
-                                    <input [(ngModel)]='produto.quantidade' name="quantidade" type="number" class="form-control" id="quantidade" min="1" max="150" placeholder="Digite a Quantidade" />
+                                <div class="pr-4">
+                                    <label for="formGroupExampleInput2">Quantidade <span class="help-block">(Obrigatório)</span> </label>
+                                    <input [(ngModel)]="produto.quantidade" type="number" class="form-control" name="quantidade" id="formGroupExampleInput2" placeholder="Digite a Quantidade" />
                                 </div>
                                 <div>
-                                    <label for="peso">Peso</label>
-                                    <input [(ngModel)]='produto.peso' name="peso" type="number" class="form-control" id="peso" placeholder="Digite o preço" />
+                                    <label for="formGroupExampleInput2">Peso <span class="help-block">(Obrigatório)</span></label>
+                                    <input [(ngModel)]="produto.peso" type="number" class="form-control" name="peso" id="formGroupExampleInput2" placeholder="Digite o preço" />
                                 </div>
                             </div>
-
-                            <div class="form-group campo-form mt-3">
-                                <label for="formGroupExampleInput">Tipo de Produto</label>
-                                <input name="tipo_prod" type="text" class="form-control" id="formGroupExampleInput" placeholder="Escreva o tipo de produto" />
+                            <div class="form-group campo-form pt-3">
+                                <label for="exampleFormControlSelect1">Categoria <span class="help-block">(Obrigatório)</span></label>
+                                <select class="form-control" id="exampleFormControlSelect1" (change)="tipoCategoria($event)">
+                                    <option>Selecione uma opção</option>
+                                    <option *ngFor="let categoria of categorias" [ngValue]="categoria">
+                                        {{ categoria }}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group campo-form">
+                                <label for="formGroupExampleInput">Tipo de Produto <span class="help-block">(Obrigatório)</span></label>
+                                <input [(ngModel)]="produto.tipo_prod" type="text" class="form-control" name="tipo_prod" id="formGroupExampleInput" placeholder="Escreva o tipo de produto" />
+                                <span class="help-block">Mínimo de cinco (5) digitos e máximo de duzentos e cinquenta e cinco(255)</span>
                             </div>
                             <div class="d-flex justify-content-center mt-5">
-                                <button type="button" class="btn-danger" (click)='apagar()'>
-                Apagar Produto
-              </button>
-                                <button type="button" class="btn-editar" (click)='atualizar()'>
-                Atualizar Produto
-              </button>
+                                <button type="button" class="btn-danger mr-4" data-dismiss="modal" (click)="apagar()">
+                                    Apagar Produto
+                                </button>
+                                <button type="button" class="btn-success" data-dismiss="modal" (click)="atualizar()">
+                                    Atualizar Produto
+                                </button>
                             </div>
                         </form>
-                        <!-- /form -->
-
-                        <!-- coluna-Imagem -->
                     </div>
                     <div class="col-4">
                         <img src="https://i.imgur.com/YWbqv7H.png" alt="Desenho de pessoas coletando recicláveis" />

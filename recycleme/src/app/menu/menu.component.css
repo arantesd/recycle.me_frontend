@@ -7,14 +7,18 @@
     color: #41566b;
     font-size: 18px;
     font-weight: bold;
-    text-transform: uppercase;
+    margin-right: 20px;
 }
 
 #botaoCC {
     color: rgba(65, 86, 107, 1);
     background-color: rgba(36, 191, 60, 0.62);
     font-weight: 500;
-    text-transform: uppercase;
+}
+
+#botaoCC:hover {
+    background-color: rgba(36, 191, 60, 1);
+    transition: 0.5s
 }
 
 #homeButton {
