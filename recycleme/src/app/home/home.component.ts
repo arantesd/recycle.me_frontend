@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router, public auth: AuthService) {}
 
-  ngOnInit() {
-    window.scroll(0, 0);
+  ngOnInit(){
+    window.scroll(0,0)
   }
 }

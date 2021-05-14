@@ -16,23 +16,33 @@ export class CategoriaComponent implements OnInit {
   avaliacao: Avaliacao = new Avaliacao();
   listaAvaliacao: Avaliacao[];
 
+  categoria: string
+  categorias = ['METAL','PAPEL','PLASTICO','VIDRO', 'MADEIRA']
+
   constructor(
     private produtoService: ProdutoService,
     public auth: AuthService
   ) {}
   ngOnInit() {
-    this.findAllProduto();
+    window.scroll(0,0)
+    this.findAllProduto()
   }
-  findAllProduto() {
-    this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
-      this.listaProduto = resp;
-    });
+  findAllProduto(){
+    this.produtoService.getAllProdutos().subscribe((resp: Produto[])=>{
+      this.listaProduto = resp
+    })
+  } 
+  tipoCategoria(event: any){
+    this.categoria = event.target.value
+    console.log(this.categoria)
   }
-  findProdutoByCategoria(categoria: string) {
-    this.produtoService
-      .getByCategoria(categoria)
-      .subscribe((resp: Produto[]) => {
-        this.listaProduto = resp;
-      });
+
+  aplicar(){
+    this.produtoService.getByCategoria(this.categoria).subscribe((resp: Produto[])=>{
+      this.listaProduto = resp
+    })
+  }
+  cancel(){
+    this.findAllProduto()
   }
 }
