@@ -7,21 +7,16 @@ import { AuthService } from '../service/auth.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  usuario: Usuario = new Usuario();
 
-  usuario: Usuario = new Usuario()
+  id = environment.id;
 
-  id = environment.id
-  
-  constructor(
-    private router: Router,
-    public auth: AuthService
-  ) { }
+  constructor(private router: Router, public auth: AuthService) {}
 
-  ngOnInit(){
-    console.log(this.id)
+  ngOnInit() {
+    window.scroll(0, 0);
   }
-
 }

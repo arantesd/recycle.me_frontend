@@ -44,9 +44,6 @@ export class UsuarioAvaliacaoComponent implements OnInit {
         this.avaliacao = resp;
         alert('Avaliação postada com sucesso!');
         this.avaliacao = new Avaliacao();
-
-
-        console.log(this.userLogin.id)
       });
   }
 }

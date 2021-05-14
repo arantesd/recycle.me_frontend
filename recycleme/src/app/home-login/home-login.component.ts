@@ -35,22 +35,23 @@ export class HomeLoginComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    window.scroll(0, 0);
     if (environment.token == '') {
       this.router.navigate(['/entrar']);
     }
     this.findByIdUser();
-  
   }
 
   findByIdUser() {
-    this.authService.getByIdUser(this.idUsuarioLogin).subscribe((resp: Usuario) => {
+    this.authService
+      .getByIdUser(this.idUsuarioLogin)
+      .subscribe((resp: Usuario) => {
         this.usuario = resp;
       });
   }
   showModal(id: number) {
     this.idProduto = id;
-    this.findByProdutoId()
-    console.log(this.produto)
+    this.findByProdutoId();
   }
   apagar() {
     this.produtoService.deleteProduto(this.idProduto).subscribe(() => {
@@ -63,20 +64,19 @@ export class HomeLoginComponent implements OnInit {
     this.categoria = event.target.value;
   }
 
-  atualizar(){
-    console.log(this.produto)
-    this.produtoService.putProduto(this.produto).subscribe((resp: Produto)=>{
-      console.log(this.produto)
-      this.produto = resp
-      alert('Produto atualizado com sucesso')
-      this.findByIdUser()
-    })
+  atualizar() {
+    this.produtoService.putProduto(this.produto).subscribe((resp: Produto) => {
+      this.produto = resp;
+      alert('Produto atualizado com sucesso');
+      this.findByIdUser();
+    });
   }
 
-  findByProdutoId(){
-    this.produtoService.getByIdProduto(this.idProduto).subscribe((resp: Produto)=>{
-      this.produto = resp
-    })
+  findByProdutoId() {
+    this.produtoService
+      .getByIdProduto(this.idProduto)
+      .subscribe((resp: Produto) => {
+        this.produto = resp;
+      });
   }
-
 }
