@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -19,10 +20,10 @@ export class CadastrarComponent implements OnInit {
   confirmarSenha: string;
 
   constructor(
-    private authService: AuthService,
-    private router: Router,
-    private formBuider: FormBuilder
-  ) {}
+    private authService:AuthService,
+    private router:Router,
+    private alertas: AlertasService
+  ) { }
 
   ngOnInit() {
     window.scroll(0, 0);
@@ -32,22 +33,23 @@ export class CadastrarComponent implements OnInit {
     this.confirmarSenha = event.target.value;
   }
 
-  cadastrar() {
-    if (this.usuario.senha != this.confirmarSenha) {
-      alert('Senha Incorreta!!');
-    } else {
-      this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
-        this.usuario = resp;
-        this.router.navigate(['/entrar']);
-        alert('Usuario cadastrado com sucesso!');
-      });
-    }
-    (erro: { status: number }) => {
-      if (erro.status == 400) {
-        alert('É necessário preencher todos os dados corretamente.');
-      } else {
-        alert('Usuario cadastrado com sucesso!');
+  cadastrar(){
+    if(this.usuario.senha != this.confirmarSenha){
+      this.alertas.showAlertDanger('Senha Incorreta!!')
+    }else{
+      this.authService.cadastrar(this.usuario).subscribe((resp:Usuario)=>{
+        this.usuario = resp 
+        this.router.navigate(['/entrar'])
+        this.alertas.showAlertSuccess('Usuario cadastrado com sucesso!')
+      })
+    } 
+    (erro: { status: number; })=>{
+    if(erro.status == 400){
+      this.alertas.showAlertInfo('É necessário preencher todos os dados corretamente.')
+    }else{
+      this.alertas.showAlertSuccess('Usuario cadastrado com sucesso!')
       }
     };
   }
+}
 }

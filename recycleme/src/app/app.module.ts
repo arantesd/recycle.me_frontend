@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http' 
 import { FormsModule, ReactiveFormsModule, } from '@angular/forms';
 import { HashLocationStrategy,LocationStrategy} from '@angular/common';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { DicasComponent } from './dicas/dicas.component';
 import { UsuarioAvaliacaoComponent } from './usuario-avaliacao/usuario-avaliacao.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { CategoriaComponent } from './categoria/categoria.component';
+import { AlertasComponent } from './alertas/alertas.component';
 
 
 
@@ -38,6 +40,7 @@ import { CategoriaComponent } from './categoria/categoria.component';
     DicasComponent,
     UsuarioAvaliacaoComponent,
     CategoriaComponent,
+    AlertasComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import { CategoriaComponent } from './categoria/categoria.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ModalModule.forRoot()
   ],
   providers: [{
     provide: LocationStrategy,

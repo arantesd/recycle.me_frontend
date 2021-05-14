@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
 import { UsuarioLogin } from '../model/UsuarioLogin';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { ProdutoService } from '../service/produto.service';
 
@@ -31,7 +32,8 @@ export class HomeLoginComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private route: ActivatedRoute,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    private alertas: AlertasService
   ) {}
 
   ngOnInit() {
@@ -57,7 +59,7 @@ export class HomeLoginComponent implements OnInit {
   }
   apagar() {
     this.produtoService.deleteProduto(this.idProduto).subscribe(() => {
-      alert('Produto apagado com sucesso');
+      this.alertas.showAlertDanger('Produto apagado com sucesso');
       this.findByIdUser();
     });
   }
@@ -66,12 +68,12 @@ export class HomeLoginComponent implements OnInit {
     this.categoria = event.target.value;
   }
 
-  atualizar() {
-    this.produtoService.putProduto(this.produto).subscribe((resp: Produto) => {
-      this.produto = resp;
-      alert('Produto atualizado com sucesso');
-      this.findByIdUser();
-    });
+  atualizar(){
+    this.produtoService.putProduto(this.produto).subscribe((resp: Produto)=>{
+      this.produto = resp
+      this.alertas.showAlertSuccess('Produto atualizado com sucesso')
+      this.findByIdUser()
+    })
   }
 
   findByProdutoId() {
