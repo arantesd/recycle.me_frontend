@@ -13,11 +13,7 @@ export class DicasComponent implements OnInit {
   ) { }
 
   ngOnInit(){
-<<<<<<< HEAD
-    window.scroll(0, 0);
-=======
     window.scroll(0,0)
->>>>>>> 84aaf6c08184d3003cf9d14615edf638c9f134b5
   }
 
 }

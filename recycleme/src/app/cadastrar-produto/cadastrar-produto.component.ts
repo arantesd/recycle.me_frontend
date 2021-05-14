@@ -21,13 +21,6 @@ export class CadastrarProdutoComponent implements OnInit {
   constructor(private produtoService: ProdutoService, private router: Router) {}
 
   ngOnInit() {
-<<<<<<< HEAD
-    window.scroll(0, 0);
-  }
-
-  tipoCategoria(event: any) {
-    this.categoria = event.target.value;
-=======
     window.scroll(0,0)
 
     if(environment.token == ''){
@@ -38,7 +31,6 @@ export class CadastrarProdutoComponent implements OnInit {
 
   tipoCategoria(event: any){
     this.categoria = event.target.value
->>>>>>> 84aaf6c08184d3003cf9d14615edf638c9f134b5
   }
 
   registrar() {
