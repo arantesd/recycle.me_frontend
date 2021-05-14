@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { ProdutoService } from '../service/produto.service';
 
 @Component({
@@ -20,7 +21,8 @@ export class CadastrarProdutoComponent implements OnInit {
 
   constructor(
     private produtoService: ProdutoService,
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
 
   ) { }
 
@@ -41,7 +43,7 @@ export class CadastrarProdutoComponent implements OnInit {
     this.produtoService.registrar(this.produto, this.idUser).subscribe((resp: Produto) =>{
       this.produto = resp
       this.router.navigate(['/detalhe'])
-      alert('Produto registrado com sucesso!')
+      this.alertas.showAlertSuccess('Produto registrado com sucesso!')
     })
 
     console.log(this.registrar)

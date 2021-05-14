@@ -5,6 +5,7 @@ import { Avaliacao } from '../model/Avaliacao';
 import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
 import { UsuarioLogin } from '../model/UsuarioLogin';
+import { AlertasService } from '../service/alertas.service';
 import { ProdutoService } from '../service/produto.service';
 import { UsuarioAvaliacaoService } from '../service/usuario-avaliacao.service';
 import { UsuarioService } from '../service/usuario.service';
@@ -32,6 +33,7 @@ export class ProdutoDetalheComponent implements OnInit {
     private produtoService: ProdutoService,
     private usuarioService: UsuarioService,
     private route : ActivatedRoute,
+    private alertas: AlertasService
   ) { 
     this.changeText = false
   }
@@ -48,13 +50,13 @@ export class ProdutoDetalheComponent implements OnInit {
     this.avaliacao.usuario = this.usuario
     this.avaliacaoService.postAvaliacao(this.avaliacao).subscribe((resp: Avaliacao) => {
         this.avaliacao = resp;
-        alert('Avaliação postada com sucesso!');
+        this.alertas.showAlertSuccess('Avaliação postada com sucesso!');
       },erro=> {
         if(erro.status == 500){
           if(this.usuario.id == 0){
-            alert('Erro no Cadastro! Você precisa estar cadastrado para efetuar uma avaliação')
+            this.alertas.showAlertDanger('Erro no Cadastro! Você precisa estar cadastrado para efetuar uma avaliação')
           }else{
-            alert('Você esqueceu de dar a nota da avaliação')
+            this.alertas.showAlertInfo('Você esqueceu de dar a nota da avaliação')
           }
         }
       });
