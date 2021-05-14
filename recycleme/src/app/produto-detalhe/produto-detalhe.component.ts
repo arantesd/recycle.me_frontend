@@ -39,6 +39,7 @@ export class ProdutoDetalheComponent implements OnInit {
   }
 
   ngOnInit(){
+    window.scroll(0,0)
     let id = this.route.snapshot.params['id']
     this.findByIdProduto(id)
     this.findAllAvalicao()

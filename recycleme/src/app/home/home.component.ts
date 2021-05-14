@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(){
-    console.log(this.id)
+    window.scroll(0,0)
   }
 
 }

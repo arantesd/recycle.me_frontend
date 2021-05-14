@@ -17,11 +17,15 @@ export class CategoriaComponent implements OnInit {
   avaliacao: Avaliacao = new Avaliacao();
   listaAvaliacao: Avaliacao[]  
 
+  categoria: string
+  categorias = ['METAL','PAPEL','PLASTICO','VIDRO', 'MADEIRA']
+
   constructor(
     private produtoService: ProdutoService,
     public auth: AuthService
   ){ }
   ngOnInit() {
+    window.scroll(0,0)
     this.findAllProduto()
   }
   findAllProduto(){
@@ -29,9 +33,17 @@ export class CategoriaComponent implements OnInit {
       this.listaProduto = resp
     })
   } 
-  findProdutoByCategoria(categoria: string){
-    this.produtoService.getByCategoria(categoria).subscribe((resp: Produto[])=>{
+  tipoCategoria(event: any){
+    this.categoria = event.target.value
+    console.log(this.categoria)
+  }
+
+  aplicar(){
+    this.produtoService.getByCategoria(this.categoria).subscribe((resp: Produto[])=>{
       this.listaProduto = resp
     })
+  }
+  cancel(){
+    this.findAllProduto()
   }
 }
