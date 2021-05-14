@@ -35,8 +35,11 @@ export class HomeLoginComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    window.scroll(0,0)
+    
     if (environment.token == '') {
       this.router.navigate(['/entrar']);
+      alert("Você precisa estar logado para cadastrar produto! Sua sessão deve ter sido encerrada, efetue login novamente")
     }
     this.findByIdUser();
   
