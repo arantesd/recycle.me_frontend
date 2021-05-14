@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Avaliacao } from '../model/Avaliacao';
 import { Usuario } from '../model/Usuario';
 import { UsuarioLogin } from '../model/UsuarioLogin';
+import { AlertasService } from '../service/alertas.service';
 import { UsuarioAvaliacaoService } from '../service/usuario-avaliacao.service';
 
 @Component({
@@ -14,7 +15,10 @@ export class UsuarioAvaliacaoComponent implements OnInit {
   listaAvaliacao: Avaliacao[];
   userLogin: UsuarioLogin = new UsuarioLogin;
 
-  constructor(private avaliacaoService: UsuarioAvaliacaoService) { }
+  constructor(
+    private avaliacaoService: UsuarioAvaliacaoService,
+    private alertas: AlertasService
+    ) { }
 
   ngOnInit(): void {
   }
@@ -42,7 +46,7 @@ export class UsuarioAvaliacaoComponent implements OnInit {
       .postAvaliacao(this.avaliacao)
       .subscribe((resp: Avaliacao) => {
         this.avaliacao = resp;
-        alert('Avaliação postada com sucesso!');
+        this.alertas.showAlertSuccess('Avaliação postada com sucesso!');
         this.avaliacao = new Avaliacao();
 
 
