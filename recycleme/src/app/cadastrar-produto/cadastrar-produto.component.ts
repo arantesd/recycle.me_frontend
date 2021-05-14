@@ -31,7 +31,7 @@ export class CadastrarProdutoComponent implements OnInit {
 
     if(environment.token == ''){
       this.router.navigate(['/entrar'])
-      alert("Você precisa estar logado para cadastrar produto! Sua sessão deve ter sido encerrada, efetue login novamente")
+      this.alertas.showAlertInfo("Você precisa estar logado para cadastrar produto! Sua sessão deve ter sido encerrada, efetue login novamente")
     }
   }
 
