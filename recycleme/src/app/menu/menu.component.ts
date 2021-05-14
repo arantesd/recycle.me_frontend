@@ -15,8 +15,10 @@ export class MenuComponent implements OnInit {
     public router: Router
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    window.scroll(0, 0);
   }
+  
   sair(){
     this.router.navigate(['/home'])
     environment.token=''

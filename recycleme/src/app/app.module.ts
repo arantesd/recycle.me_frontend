@@ -16,7 +16,6 @@ import { HomeComponent } from './home/home.component';
 import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
 import { HomeLoginComponent } from './home-login/home-login.component';
 import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.component';
-import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
 import { DicasComponent } from './dicas/dicas.component';
 import { UsuarioAvaliacaoComponent } from './usuario-avaliacao/usuario-avaliacao.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
@@ -37,7 +36,6 @@ import { AlertasComponent } from './alertas/alertas.component';
     CadastrarProdutoComponent,
     HomeLoginComponent,
     ProdutoDetalheComponent,
-    EditarPerfilComponent,
     SobreNosComponent,
     DicasComponent,
     UsuarioAvaliacaoComponent,
