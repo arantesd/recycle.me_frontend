@@ -1,60 +1,61 @@
 <app-menu></app-menu>
 <!-- titulo -->
 <div class="pl-5 pt-5 mt-5 titulo">
-  <h2>Cadastrar Produto</h2>
+    <h2>Cadastrar Produto</h2>
 </div>
 <!-- /titulo -->
 
 <!-- form -->
 <div class="row d-flex align-items-center mt-3">
-  <div class="col-1"></div>
-  <div class="col-6">
-    <form>
-      <div class="form-group campo-form">
-        <label for="formGroupExampleInput">Nome do Produto</label>
-        <input [(ngModel)]='produto.nome' type="text" class="form-control" name="produto" id="formGroupExampleInput" placeholder="Insira o nome do Produto">
-      </div>
-      <div class="form-group campo-form">
-        <label for="formGroupExampleInput">Link da Foto do Produto</label>
-        <input [(ngModel)]='produto.foto' class="form-control" type="text" name="foto" id="foto" placeholder="Link da foto do produto">
-    </div>
-      <div class="d-flex campo-form col-form">
-        <div class="pr-4">
-          <label for="formGroupExampleInput2">Preço</label>
-          <input [(ngModel)]='produto.preco' type="number" class="form-control" name="preco" id="formGroupExampleInput2" placeholder="Digite o preço">
-        </div>
-        <div class="pr-4">
-          <label for="formGroupExampleInput2">Quantidade</label>
-          <input [(ngModel)]='produto.quantidade' type="number" class="form-control" name="quantidade" id="formGroupExampleInput2" placeholder="Digite a Quantidade">
-        </div>
-        <div>
-          <label for="formGroupExampleInput2">Peso</label>
-          <input [(ngModel)]='produto.peso' type="number" class="form-control" name="peso" id="formGroupExampleInput2" placeholder="Digite o preço">
-        </div>
-      </div>
-      <div class="form-group campo-form pt-3 ">
-        <label for="exampleFormControlSelect1">Categoria</label>
-        <select class="form-control" id="exampleFormControlSelect1" (change)='tipoCategoria($event)'>
+    <div class="col-1"></div>
+    <div class="col-6">
+        <form>
+            <div class="form-group campo-form">
+                <label for="formGroupExampleInput">Nome do Produto <span class="help-block">(Obrigatório)</span></label>
+                <input [(ngModel)]='produto.nome' type="text" class="form-control" name="produto" id="formGroupExampleInput" placeholder="Insira o nome do Produto">
+            </div>
+            <div class="form-group campo-form">
+                <label for="formGroupExampleInput">Link da Foto do Produto <span class="help-block">(Opcional)</span></label>
+                <input [(ngModel)]='produto.foto' class="form-control" type="text" name="foto" id="foto" placeholder="Link da foto do produto">
+            </div>
+            <div class="d-flex campo-form col-form">
+                <div class="pr-4">
+                    <label for="formGroupExampleInput2">Preço <span class="help-block">(Obrigatório)</span></label>
+                    <input [(ngModel)]='produto.preco' type="number" class="form-control" name="preco" id="formGroupExampleInput2" placeholder="Digite o preço">
+                </div>
+                <div class="pr-4">
+                    <label for="formGroupExampleInput2">Quantidade <span class="help-block">(Obrigatório)</span></label>
+                    <input [(ngModel)]='produto.quantidade' type="number" class="form-control" name="quantidade" id="formGroupExampleInput2" placeholder="Digite a Quantidade">
+                </div>
+                <div>
+                    <label for="formGroupExampleInput2">Peso <span class="help-block">(Obrigatório)</span></label>
+                    <input [(ngModel)]='produto.peso' type="number" class="form-control" name="peso" id="formGroupExampleInput2" placeholder="Digite o preço">
+                </div>
+            </div>
+            <div class="form-group campo-form pt-3 ">
+                <label for="exampleFormControlSelect1">Categoria <span class="help-block">(Obrigatório)</span></label>
+                <select class="form-control" id="exampleFormControlSelect1" (change)='tipoCategoria($event)'>
           <option>Selecione uma opção</option>
           <option *ngFor="let categoria of categorias" [ngValue]="categoria">{{categoria}}</option>
         </select>
-      </div>
-      <div class="form-group campo-form">
-        <label for="formGroupExampleInput">Tipo de Produto</label>
-        <input [(ngModel)]='produto.tipo_prod' type="text" class="form-control" name="tipo_prod" id="formGroupExampleInput" placeholder="Escreva o tipo de produto">
-      </div>
-      <div class="d-flex justify-content-center mt-5">
-        <button type="button" class="btn cancelar mr-4" routerLink='/detalhe'>Cancelar</button>
-        <button type="button" class="btn cadastrar" (click)='registrar()'>Cadastrar Produto</button>
-      </div>
-    </form>
-<!-- /form -->
+            </div>
+            <div class="form-group campo-form">
+                <label for="formGroupExampleInput">Tipo de Produto <span class="help-block">(Obrigatório)</span></label>
+                <input [(ngModel)]='produto.tipo_prod' type="text" class="form-control" name="tipo_prod" id="formGroupExampleInput" placeholder="Escreva o tipo de produto">
+                <span class="help-block">Mínimo de cinco (5) digitos e máximo de duzentos e cinquenta e cinco (255) caracteres</span>
+            </div>
+            <div class="d-flex justify-content-center mt-5">
+                <button type="button" class="btn cancelar mr-4" routerLink='/home'>Cancelar</button>
+                <button type="button" class="btn cadastrar" (click)='registrar()'>Cadastrar Produto</button>
+            </div>
+        </form>
+        <!-- /form -->
 
-<!-- coluna-Imagem -->
-  </div>
-  <div class="col-4">
-    <img src="https://i.imgur.com/YWbqv7H.png" alt="Desenho de pessoas coletando recicláveis">
-  </div>
+        <!-- coluna-Imagem -->
+    </div>
+    <div class="col-4">
+        <img src="https://i.imgur.com/YWbqv7H.png" alt="Desenho de pessoas coletando recicláveis">
+    </div>
 </div>
 <!-- /coluna-Imagem -->
 <app-footer></app-footer>

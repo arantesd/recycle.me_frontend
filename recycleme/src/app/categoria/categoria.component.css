@@ -12,7 +12,7 @@ table,
 tr,
 td {
     border: none;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .card-produtos {
@@ -169,4 +169,13 @@ input[type="checkbox"] {
         padding-right: 20px;
         margin: 20px 0 20px 0px;
     }
+}
+
+.aplicar{
+    background-color: rgba(36, 191, 60, 0.62)
+}
+
+.cancelar{
+    color: white;
+    background-color: #fa8376;
 }

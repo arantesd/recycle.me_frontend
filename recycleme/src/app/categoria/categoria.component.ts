@@ -13,23 +13,25 @@ export class CategoriaComponent implements OnInit {
 
   produto: Produto = new Produto()
   listaProduto: Produto[]
+
   avaliacao: Avaliacao = new Avaliacao();
-  listaAvaliacao: Avaliacao[]
+  listaAvaliacao: Avaliacao[]  
+
   constructor(
     private produtoService: ProdutoService,
     public auth: AuthService
   ){ }
-
-
   ngOnInit() {
     this.findAllProduto()
   }
-
-
   findAllProduto(){
     this.produtoService.getAllProdutos().subscribe((resp: Produto[])=>{
       this.listaProduto = resp
-      console.log(this.listaProduto)
     })
   } 
+  findProdutoByCategoria(categoria: string){
+    this.produtoService.getByCategoria(categoria).subscribe((resp: Produto[])=>{
+      this.listaProduto = resp
+    })
+  }
 }

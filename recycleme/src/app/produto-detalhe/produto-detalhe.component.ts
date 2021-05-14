@@ -25,13 +25,16 @@ export class ProdutoDetalheComponent implements OnInit {
   idUser = environment.id
   IdAvaliacao : number;
  
+  changeText: boolean
 
   constructor(
     private avaliacaoService: UsuarioAvaliacaoService,
     private produtoService: ProdutoService,
     private usuarioService: UsuarioService,
-    private route : ActivatedRoute
-  ) { }
+    private route : ActivatedRoute,
+  ) { 
+    this.changeText = false
+  }
 
   ngOnInit(){
     let id = this.route.snapshot.params['id']
@@ -43,12 +46,17 @@ export class ProdutoDetalheComponent implements OnInit {
     this.avaliacao.id = this.IdAvaliacao
     this.usuario.id = this.idUser
     this.avaliacao.usuario = this.usuario
-    this.avaliacaoService
-      .postAvaliacao(this.avaliacao)
-      .subscribe((resp: Avaliacao) => {
+    this.avaliacaoService.postAvaliacao(this.avaliacao).subscribe((resp: Avaliacao) => {
         this.avaliacao = resp;
         alert('Avaliação postada com sucesso!');
-        console.log(this.avaliacao.usuario)
+      },erro=> {
+        if(erro.status == 500){
+          if(this.usuario.id == 0){
+            alert('Erro no Cadastro! Você precisa estar cadastrado para efetuar uma avaliação')
+          }else{
+            alert('Você esqueceu de dar a nota da avaliação')
+          }
+        }
       });
   }
 
@@ -58,13 +66,11 @@ export class ProdutoDetalheComponent implements OnInit {
     })
     
   }
-
   findAllUsuario(){
     this.usuarioService.getAllUsuario().subscribe((resp: Usuario[])=>{
       this.listaUsuario = resp
     })
   }
-
   findAllAvalicao(){
     this.avaliacaoService.getAllAvaliacao().subscribe((resp: Avaliacao[]) =>{
       this.listaAvaliacao = resp

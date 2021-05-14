@@ -35,7 +35,6 @@ export class CadastrarProdutoComponent implements OnInit {
 
 
   registrar(){
-
     this.produto.categoria = this.categoria
     console.log(this.idUser)
     console.log(this.produto)
